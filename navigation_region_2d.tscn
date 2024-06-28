@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://exj1va2atkt8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_38qb7"]
+vertices = PackedVector2Array(368, 170, 549, 156, 443, 310, 139, 341, 201, 187, 105, 27, -20, 152, -79, 0, 5, -70, 112, -39)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6, 7, 8), PackedInt32Array(8, 9, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(115, 25, 206, 176, 367, 160, 570, 145, 449, 320, 135, 352, -28, 158, -91, -4, 4, -82, 123, -47)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2io0y"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D"]
+navigation_polygon = SubResource("NavigationPolygon_38qb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_2io0y")
