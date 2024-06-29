@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctuccbgbax5lq"]
+
+[ext_resource type="Texture2D" uid="uid://coks3uq5vjkev" path="res://Agents/Cops/Copcar.jpeg" id="1_07t2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amq7y"]
+size = Vector2(61, 26)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_07t2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_amq7y")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
