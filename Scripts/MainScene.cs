@@ -32,7 +32,6 @@ public partial class MainScene : Node
         if (GetChildCount() > 0)
         {
             Node child = GetChild(0);
-            GD.Print(child);
             child.QueueFree();
         }
         PackedScene scene = GD.Load<PackedScene>(path);
