@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g1wdqfgv7tgx"]
+[gd_scene load_steps=10 format=3 uid="uid://g1wdqfgv7tgx"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_vo8kc"]
 [ext_resource type="PackedScene" uid="uid://exj1va2atkt8" path="res://Scenes/navigation_region_2d.tscn" id="2_qpfl3"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://3d40cm0v0b3t" path="res://Player/player.tscn" id="5_hv8bu"]
 [ext_resource type="PackedScene" uid="uid://rsimo1wl627a" path="res://Interactors/Box/Box.tscn" id="6_j5lwt"]
 [ext_resource type="PackedScene" uid="uid://dtja2hqy4c8eo" path="res://Agents/Dog/Dog.tscn" id="7_n3e75"]
+
+[sub_resource type="Curve2D" id="Curve2D_tcwau"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1003, 536, 0, 0, 0, 0, 1010, 81)
+}
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_yw5c8"]
 _data = {
@@ -27,21 +33,32 @@ position = Vector2(296, 51)
 [node name="MailBox2" parent="MailBoxHolder" instance=ExtResource("3_16drf")]
 position = Vector2(426, 51)
 
-[node name="CopCar" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_o468e")]
-position = Vector2(572, 69)
-path = NodePath("../CopPath")
-
-[node name="CopPath" type="Path2D" parent="."]
-curve = SubResource("Curve2D_yw5c8")
-
 [node name="Player" parent="." instance=ExtResource("5_hv8bu")]
 position = Vector2(818, 290)
 
-[node name="Node2D" parent="." instance=ExtResource("6_j5lwt")]
+[node name="Dog" type="Node2D" parent="."]
+
+[node name="Dog" parent="Dog" node_paths=PackedStringArray("path") instance=ExtResource("7_n3e75")]
+position = Vector2(996, 287)
+path = NodePath("../Path2D")
+Speed = 80.0
+
+[node name="Path2D" type="Path2D" parent="Dog"]
+curve = SubResource("Curve2D_tcwau")
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="Box" parent="Boxes" instance=ExtResource("6_j5lwt")]
 position = Vector2(812, 467)
 
-[node name="Node2D2" parent="." instance=ExtResource("6_j5lwt")]
+[node name="Box2" parent="Boxes" instance=ExtResource("6_j5lwt")]
 position = Vector2(167, 556)
 
-[node name="Dog" parent="." instance=ExtResource("7_n3e75")]
-position = Vector2(996, 287)
+[node name="Cop" type="Node2D" parent="."]
+
+[node name="CopCar" parent="Cop" node_paths=PackedStringArray("path") instance=ExtResource("4_o468e")]
+position = Vector2(572, 69)
+path = NodePath("../CopPath")
+
+[node name="CopPath" type="Path2D" parent="Cop"]
+curve = SubResource("Curve2D_yw5c8")

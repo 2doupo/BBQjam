@@ -11,19 +11,26 @@ size = Vector2(41, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17lk2"]
 size = Vector2(21, 36)
 
-[node name="Dog" type="CharacterBody2D"]
+[node name="Dog" type="CharacterBody2D" node_paths=PackedStringArray("CircularZone", "TrackZone")]
 script = ExtResource("1_kvcp3")
+CircularZone = NodePath("VisionZone2")
+TrackZone = NodePath("VisionZone")
+AutoPath = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_3jjef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)
+scale = Vector2(0.15, 0.15)
 shape = SubResource("RectangleShape2D_rkj0h")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 20.0
 avoidance_enabled = true
+avoidance_layers = 2
+avoidance_mask = 2
 
 [node name="Catch" type="Area2D" parent="."]
 

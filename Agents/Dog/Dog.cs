@@ -19,6 +19,7 @@ public partial class Dog : AgentPath
         body.BodyEntered += OnBodyEntered;
         CircularZone.IsActive = false;
         TrackZone.IsActive = false;
+        currentState = DogState.Walking;
     }
 
     public void OnBodyEntered(Node node)
