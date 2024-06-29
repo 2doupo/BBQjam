@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://6vuwj8vmcmek"]
+
+[ext_resource type="Script" path="res://Agents/VisionZone.cs" id="1_xuwsv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d1li4"]
+
+[node name="VisionZone" type="Area2D"]
+script = ExtResource("1_xuwsv")
+neutralColor = Color(0.329412, 1, 0.329412, 0.580392)
+AlertedColor = Color(0.835294, 0, 0.101961, 0.580392)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(15, 15)
+shape = SubResource("CircleShape2D_d1li4")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.329412, 1, 0.329412, 0.196078)
+polygon = PackedVector2Array(-1, -150, -75, -130, -130, -73, -150, 0, -129, 75, -75, 132, 0, 150, 73, 132, 133, 76, 150, 2, 131, -76, 76, -129)

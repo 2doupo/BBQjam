@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3d40cm0v0b3t"]
+[gd_scene load_steps=5 format=3 uid="uid://3d40cm0v0b3t"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_l00ly"]
 [ext_resource type="Texture2D" uid="uid://clu2j26u3nunv" path="res://icon.svg" id="1_txtuw"]
+[ext_resource type="Texture2D" uid="uid://cqw4uus31ojgt" path="res://Interactors/Box/Box.jpeg" id="3_mkxui"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjij5"]
 size = Vector2(30, 30)
@@ -19,3 +20,9 @@ radius = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qjij5")
+
+[node name="Box" type="Sprite2D" parent="."]
+visible = false
+rotation = -0.483456
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_mkxui")

@@ -27,7 +27,7 @@ public partial class Level : Node2D, IScene
         if (AvailableBoxes == null) AvailableBoxes = new List<MailBox>();
 
         AvailableBoxes.Add(mailBox);
-        mailBox.OnPlayerEnterZone += (node) => InteractedWithMailbox(mailBox);
+        mailBox.OnPlayerEnterZone += (node, player) => InteractedWithMailbox(mailBox);
     }
 
     public void InteractedWithMailbox(MailBox box)

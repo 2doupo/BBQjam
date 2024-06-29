@@ -8,6 +8,7 @@ public partial class AgentPathVision : AgentPath
     private Area2D visionZone;
     private Polygon2D visionVisual;
 
+
     private bool isPlayerInVision;
     private player _player;
 

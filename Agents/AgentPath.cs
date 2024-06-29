@@ -8,7 +8,10 @@ public partial class AgentPath : CharacterBody2D
     public Path2D path;
 
     [Export]
-    public  float Speed = 60f;
+    public float Speed = 60f;
+    [Export]
+    public bool AutoPath = true;
+
     private float currentSpeed;
 
     private NavigationAgent2D _navigationAgent;
@@ -48,11 +51,17 @@ public partial class AgentPath : CharacterBody2D
         this.Velocity = safeVelocity;
         Rotation = safeVelocity.Angle() + Mathf.Pi;
         MoveAndSlide();
-        if (_navigationAgent.IsTargetReached())
+        if (_navigationAgent.IsTargetReached() && AutoPath)
         {
-            currentIndex = currentIndex < path.Curve.PointCount - 1 ? currentIndex + 1 : 0;
-            _navigationAgent.TargetPosition = path.Curve.GetPointPosition(currentIndex);
+            NextStepPath();
         }
+    }
+
+
+    public void NextStepPath()
+    {
+        currentIndex = currentIndex < path.Curve.PointCount - 1 ? currentIndex + 1 : 0;
+        _navigationAgent.TargetPosition = path.Curve.GetPointPosition(currentIndex);
     }
 
     public void OverwriteTarget(Vector2 position, float speed)

@@ -3,10 +3,38 @@ using System;
 
 public partial class player : CharacterBody2D
 {
-    public const float Speed = 60f;
+    public enum State { Free, InTheBox }
+    private State _currentState = State.Free;
+    public State currentState
+    {
+        get { return _currentState; }
+        set
+        {
+            _currentState = value;
+            boxSprite.Visible = currentState == State.InTheBox;
+        }
+    }
+
+    public float CurrentSpeed
+    {
+        get
+        {
+            return currentState switch
+            {
+                State.Free => 80f,
+                State.InTheBox => 30f,
+                _ => 0
+            };
+        }
+    }
+
+    public const double BoxDuration = 4f;
+    private double boxTimer;
 
     private NavigationAgent2D _navigationAgent;
     private bool isInit = false;
+
+    private Sprite2D boxSprite;
 
     [Signal]
     public delegate void OnPlayerCaughtEventHandler();
@@ -16,6 +44,7 @@ public partial class player : CharacterBody2D
         _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
         _navigationAgent.AvoidanceEnabled = true;
         _navigationAgent.VelocityComputed += VelocityComputed;
+        boxSprite = GetNode<Sprite2D>("Box");
         Callable.From(ActorSetup).CallDeferred();
 
     }
@@ -24,6 +53,11 @@ public partial class player : CharacterBody2D
         base._PhysicsProcess(delta);
         if (!isInit) return;
 
+        if (currentState == State.InTheBox)
+        {
+            boxTimer += delta;
+            if (boxTimer > BoxDuration) currentState = State.Free;
+        }
 
         Vector2 Direction = new Vector2(0, 0);
         if (Input.IsActionPressed("ui_up"))
@@ -42,9 +76,9 @@ public partial class player : CharacterBody2D
         {
             Direction += new Vector2(1, 0);
         }
-        Direction = Direction.Normalized() * Speed;
+        Direction = Direction.Normalized() * CurrentSpeed;
         _navigationAgent.TargetPosition = Transform.Origin + Direction;
-        _navigationAgent.Velocity = GlobalTransform.Origin.DirectionTo(_navigationAgent.GetNextPathPosition()) * Speed;
+        _navigationAgent.Velocity = GlobalTransform.Origin.DirectionTo(_navigationAgent.GetNextPathPosition()) * CurrentSpeed;
 
     }
 
@@ -64,6 +98,12 @@ public partial class player : CharacterBody2D
     public void PlayerCaught()
     {
         EmitSignal(SignalName.OnPlayerCaught);
+    }
+
+    public void GetInTheBox()
+    {
+        boxTimer = 0;
+        currentState = State.InTheBox;
     }
 
 }

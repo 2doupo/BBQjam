@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://g1wdqfgv7tgx"]
+[gd_scene load_steps=9 format=3 uid="uid://g1wdqfgv7tgx"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_vo8kc"]
 [ext_resource type="PackedScene" uid="uid://exj1va2atkt8" path="res://Scenes/navigation_region_2d.tscn" id="2_qpfl3"]
 [ext_resource type="PackedScene" uid="uid://0x6o4cgfakp8" path="res://Interactors/MailBox/MailBox.tscn" id="3_16drf"]
 [ext_resource type="PackedScene" uid="uid://ctuccbgbax5lq" path="res://Agents/Cops/CopCar.tscn" id="4_o468e"]
 [ext_resource type="PackedScene" uid="uid://3d40cm0v0b3t" path="res://Player/player.tscn" id="5_hv8bu"]
+[ext_resource type="PackedScene" uid="uid://rsimo1wl627a" path="res://Interactors/Box/Box.tscn" id="6_j5lwt"]
+[ext_resource type="PackedScene" uid="uid://dtja2hqy4c8eo" path="res://Agents/Dog/Dog.tscn" id="7_n3e75"]
 
 [sub_resource type="Curve2D" id="Curve2D_yw5c8"]
 _data = {
@@ -34,3 +36,12 @@ curve = SubResource("Curve2D_yw5c8")
 
 [node name="Player" parent="." instance=ExtResource("5_hv8bu")]
 position = Vector2(818, 290)
+
+[node name="Node2D" parent="." instance=ExtResource("6_j5lwt")]
+position = Vector2(812, 467)
+
+[node name="Node2D2" parent="." instance=ExtResource("6_j5lwt")]
+position = Vector2(167, 556)
+
+[node name="Dog" parent="." instance=ExtResource("7_n3e75")]
+position = Vector2(996, 287)

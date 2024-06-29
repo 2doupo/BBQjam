@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctuccbgbax5lq"]
+[gd_scene load_steps=6 format=3 uid="uid://ctuccbgbax5lq"]
 
 [ext_resource type="Texture2D" uid="uid://coks3uq5vjkev" path="res://Agents/Cops/Copcar.jpeg" id="1_07t2g"]
 [ext_resource type="Script" path="res://Agents/Cops/CopCar.cs" id="1_jcspy"]
+[ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_hulip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amq7y"]
 size = Vector2(34, 16)
@@ -9,10 +10,9 @@ size = Vector2(34, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5776"]
 size = Vector2(19, 26)
 
-[node name="CopCar" type="CharacterBody2D"]
+[node name="CopCar" type="CharacterBody2D" node_paths=PackedStringArray("visionZone")]
 script = ExtResource("1_jcspy")
-neutralColor = Color(0.329412, 1, 0.329412, 0.580392)
-AlertedColor = Color(0.903504, 0, 0.0985447, 0.580392)
+visionZone = NodePath("VisionZone")
 
 [node name="CarSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
@@ -28,17 +28,10 @@ avoidance_layers = 2
 avoidance_mask = 2
 debug_enabled = true
 
-[node name="Vision" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Vision"]
-polygon = PackedVector2Array(-19, -10, -19, 10, -186, 33, -186, -40)
-
-[node name="Polygon2D" type="Polygon2D" parent="Vision"]
-color = Color(0.329412, 1, 0.329412, 0.580392)
-polygon = PackedVector2Array(-19, -10, -19, 10, -187, 33, -187, -40)
-
 [node name="Catch" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catch"]
 position = Vector2(-21.5, 0)
 shape = SubResource("RectangleShape2D_w5776")
+
+[node name="VisionZone" parent="." instance=ExtResource("3_hulip")]

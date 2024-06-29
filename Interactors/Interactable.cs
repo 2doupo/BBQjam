@@ -5,7 +5,7 @@ public partial class Interactable : Area2D
 {
 
     [Signal]
-    public delegate void OnPlayerEnterZoneEventHandler(Interactable interactable);
+    public delegate void OnPlayerEnterZoneEventHandler(Interactable interactable, player Player);
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -21,7 +21,7 @@ public partial class Interactable : Area2D
 
     private void OnBodyEntered(Node2D otherNode)
     {
-        if (otherNode is player) EmitSignal(SignalName.OnPlayerEnterZone,this);
+        if (otherNode is player) EmitSignal(SignalName.OnPlayerEnterZone, this, otherNode as player);
     }
 
 

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtja2hqy4c8eo"]
+
+[ext_resource type="Script" path="res://Agents/Dog/Dog.cs" id="1_kvcp3"]
+[ext_resource type="Texture2D" uid="uid://bjg1f0ikyv8lv" path="res://Agents/Dog/dog.jpeg" id="2_3jjef"]
+[ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_nyqev"]
+[ext_resource type="PackedScene" uid="uid://6vuwj8vmcmek" path="res://Agents/VisionZoneCircular.tscn" id="4_tlt37"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkj0h"]
+size = Vector2(41, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17lk2"]
+size = Vector2(21, 36)
+
+[node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_kvcp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3jjef")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_rkj0h")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+
+[node name="Catch" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Catch"]
+position = Vector2(-14.5, 2)
+shape = SubResource("RectangleShape2D_17lk2")
+
+[node name="VisionZone" parent="." instance=ExtResource("3_nyqev")]
+
+[node name="VisionZone2" parent="." instance=ExtResource("4_tlt37")]
+scale = Vector2(2, 2)
