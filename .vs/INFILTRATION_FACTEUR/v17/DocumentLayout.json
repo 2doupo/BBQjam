@@ -11,20 +11,20 @@
       "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:agents\\agentpath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\agents\\cops\\copcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:agents\\cops\\copcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\scenes\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:scenes\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\agents\\cops\\copcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:agents\\cops\\copcar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\interactors\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:interactors\\interactable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\scenes\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|solutionrelative:scenes\\level.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B15C5F8E-E813-4CBB-B34F-9A756F4C77D5}|Infiltration_facteur.csproj|c:\\users\\amirabil\\documents\\godot\\bbqjam\\interactors\\mailbox\\mailbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "Agents\\AgentPathVision.cs",
               "ToolTip": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Agents\\AgentPathVision.cs",
               "RelativeToolTip": "Agents\\AgentPathVision.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwCUAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T11:53:05.175Z",
               "EditorCaption": ""
@@ -61,14 +61,14 @@
               "RelativeDocumentMoniker": "Agents\\AgentPath.cs",
               "ToolTip": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Agents\\AgentPath.cs",
               "RelativeToolTip": "Agents\\AgentPath.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwEMAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T10:44:15.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CopCar.cs",
               "DocumentMoniker": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Agents\\Cops\\CopCar.cs",
               "RelativeDocumentMoniker": "Agents\\Cops\\CopCar.cs",
@@ -76,7 +76,8 @@
               "RelativeToolTip": "Agents\\Cops\\CopCar.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T10:34:14.644Z"
+              "WhenOpened": "2024-06-29T10:34:14.644Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -92,31 +93,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Interactable.cs",
               "DocumentMoniker": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Interactors\\Interactable.cs",
               "RelativeDocumentMoniker": "Interactors\\Interactable.cs",
               "ToolTip": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Interactors\\Interactable.cs",
               "RelativeToolTip": "Interactors\\Interactable.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T09:21:40.62Z"
+              "WhenOpened": "2024-06-29T09:21:40.62Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "player.cs",
               "DocumentMoniker": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Player\\player.cs",
               "RelativeDocumentMoniker": "Player\\player.cs",
               "ToolTip": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Player\\player.cs",
               "RelativeToolTip": "Player\\player.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwC8AAAA0AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T09:20:15.651Z"
+              "WhenOpened": "2024-06-29T09:20:15.651Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Level.cs",
               "DocumentMoniker": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Scenes\\Level.cs",
               "RelativeDocumentMoniker": "Scenes\\Level.cs",

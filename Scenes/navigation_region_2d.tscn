@@ -1,14 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://exj1va2atkt8"]
+[gd_scene load_steps=3 format=3 uid="uid://exj1va2atkt8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8me63"]
-vertices = PackedVector2Array(59, 39, 1065, 45, 954, 124, 161, 121, 53, 594, 161, 465, 1066, 587, 952, 458)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(1, 6, 7, 2)])
+vertices = PackedVector2Array(59, 39, 1065, 45, 961, 114, 870, 114, 1066, 587, 959, 464, 53, 594, 870, 473, 764, 460, 161, 465, 161, 121, 762, 119)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(9, 6, 0, 10), PackedInt32Array(10, 0, 3, 11), PackedInt32Array(3, 7, 8, 11)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(50, 29, 1075, 36, 1077, 597, 43, 605)])
 source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7t4k"]
+size = Vector2(74, 335)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D"]
 navigation_polygon = SubResource("NavigationPolygon_8me63")
 constrain_avoidance = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(171, 131, 944, 134, 942, 448, 171, 455)
+polygon = PackedVector2Array(171, 131, 752, 129, 754, 450, 171, 455)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(880, 124, 951, 124, 949, 455, 880, 462)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(918, 292.5)
+shape = SubResource("RectangleShape2D_q7t4k")
