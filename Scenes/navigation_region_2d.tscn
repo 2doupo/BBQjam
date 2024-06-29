@@ -7,7 +7,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(50, 29, 1075, 36, 1077,
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7t4k"]
-size = Vector2(74, 335)
+size = Vector2(42, 304)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D"]
 navigation_polygon = SubResource("NavigationPolygon_8me63")
@@ -21,8 +21,8 @@ polygon = PackedVector2Array(171, 131, 752, 129, 754, 450, 171, 455)
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(880, 124, 951, 124, 949, 455, 880, 462)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ViewBlock" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(918, 292.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewBlock"]
+position = Vector2(917, 289)
 shape = SubResource("RectangleShape2D_q7t4k")

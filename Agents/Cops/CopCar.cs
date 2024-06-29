@@ -13,17 +13,20 @@ public partial class CopCar : AgentPath
         base._Ready();
         Area2D body = GetNode<Area2D>("Catch");
         body.BodyEntered += OnBodyEntered;
-        visionZone.OnPlayerSeen += (p) => seesPlayer = true;
-        visionZone.OnPlayerLost += (p) =>
-        {
-            seesPlayer = false;
-            OverwriteStop();
-        };
-        visionZone.check = (p) =>
-        {
-            return p.currentState == player.State.Free;
-        };
-        visionZone.IsActive = true;
+        visionZone.Initialize(
+            this,
+            (p) => seesPlayer = true,
+            (p) =>
+            {
+                seesPlayer = false;
+                OverwriteStop();
+            },
+            (p) =>
+            {
+                return p.currentState == player.State.Free && visionZone.RaycastCheck(p);
+            },
+            true);
+
     }
 
     public override void _PhysicsProcess(double delta)
