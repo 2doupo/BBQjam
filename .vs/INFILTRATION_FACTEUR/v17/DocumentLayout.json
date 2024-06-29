@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "Agents\\AgentPathVision.cs",
               "ToolTip": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Agents\\AgentPathVision.cs",
               "RelativeToolTip": "Agents\\AgentPathVision.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA8AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T11:53:05.175Z",
               "EditorCaption": ""
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "Agents\\AgentPath.cs",
               "ToolTip": "C:\\Users\\amirabil\\Documents\\GODOT\\BBQjam\\Agents\\AgentPath.cs",
               "RelativeToolTip": "Agents\\AgentPath.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAeAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T10:44:15.557Z",
               "EditorCaption": ""
@@ -76,8 +76,7 @@
               "RelativeToolTip": "Agents\\Cops\\CopCar.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T10:34:14.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T10:34:14.644Z"
             },
             {
               "$type": "Document",
@@ -113,8 +112,7 @@
               "RelativeToolTip": "Player\\player.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAAgwC8AAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T09:20:15.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T09:20:15.651Z"
             },
             {
               "$type": "Document",
@@ -126,8 +124,7 @@
               "RelativeToolTip": "Scenes\\Level.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAgwDEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T09:20:03.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T09:20:03.714Z"
             }
           ]
         }
