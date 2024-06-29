@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://0x6o4cgfakp8"]
+
+[ext_resource type="Texture2D" uid="uid://jr6r8jbf8bq0" path="res://Interactors/MailBox/Mailbox.png" id="1_3gl84"]
+[ext_resource type="Script" path="res://Interactors/MailBox/MailBox.cs" id="1_hlxt7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xfou"]
+size = Vector2(89, 74)
+
+[node name="MailBox" type="Area2D" groups=["Mailbox"]]
+script = ExtResource("1_hlxt7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.384314, 0.407843, 1)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_3gl84")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7xfou")

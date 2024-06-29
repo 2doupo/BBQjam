@@ -1,13 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://exj1va2atkt8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_38qb7"]
-vertices = PackedVector2Array(368, 170, 549, 156, 443, 310, 139, 341, 201, 187, 105, 27, -20, 152, -79, 0, 5, -70, 112, -39)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 4, 3, 6, 7, 8), PackedInt32Array(8, 9, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(115, 25, 206, 176, 367, 160, 570, 145, 449, 320, 135, 352, -28, 158, -91, -4, 4, -82, 123, -47)])
+vertices = PackedVector2Array(977, 118, 1071, 117, 1068, 600, 972, 539, 40, 605, 126, 541, 56, 40, 132, 115, 1080, 37, 1079, 117)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(0, 7, 6, 8, 1), PackedInt32Array(8, 9, 1)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(47, 31, 1091, 27, 1089, 129, 142, 125, 136, 531, 962, 529, 968, 110, 1082, 103, 1078, 610, 30, 616)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D"]
 navigation_polygon = SubResource("NavigationPolygon_38qb7")
+constrain_avoidance = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(4, -72, 109, -39, 106, 31, 199, 185, 543, 156, 445, 311, 132, 340, -22, 152, -77, -5)
+polygon = PackedVector2Array(58, 38, 1075, 38, 1079, 117, 134, 119, 125, 537, 969, 537, 978, 108, 1072, 105, 1066, 597, 40, 606)
