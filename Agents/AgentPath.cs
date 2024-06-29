@@ -12,12 +12,12 @@ public partial class AgentPath : CharacterBody2D
     [Export]
     public bool AutoPath = true;
 
-    private float currentSpeed;
+    protected float currentSpeed;
 
-    private NavigationAgent2D _navigationAgent;
+    protected NavigationAgent2D _navigationAgent;
 
     private int currentIndex = 0;
-    private bool isInit = false;
+    protected bool isInit = false;
     private bool IsOverwriten = false;
 
     public override void _Ready()
@@ -75,6 +75,7 @@ public partial class AgentPath : CharacterBody2D
     {
         _navigationAgent.TargetPosition = path.Curve.GetPointPosition(currentIndex);
         currentSpeed = Speed;
+        IsOverwriten = false;
     }
 
 }
