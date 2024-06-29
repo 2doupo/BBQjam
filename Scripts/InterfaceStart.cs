@@ -10,7 +10,7 @@ public partial class InterfaceStart : Control, IScene
     {
         mainScene = scene;
         Button startButton = GetNode<Button>("StartGame");
-        startButton.ButtonDown += () => scene.OpenNextLeve();
+        startButton.ButtonDown += () => scene.OpenNextLevel();
     }
 
 }

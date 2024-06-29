@@ -21,11 +21,6 @@ public partial class Level : Node2D, IScene
 
     }
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
-
 
     public void RegisterMailbox(MailBox mailBox)
     {
