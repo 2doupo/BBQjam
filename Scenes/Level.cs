@@ -18,7 +18,7 @@ public partial class Level : Node2D, IScene
         {
             RegisterMailbox(item as MailBox);
         }
-
+        (GetTree().GetFirstNodeInGroup("Player") as player).OnPlayerCaught += GameOver;
     }
 
 
@@ -51,5 +51,10 @@ public partial class Level : Node2D, IScene
     {
         mainScene = scene;
         this.currentLevel = currentLevel;
+    }
+
+    private void GameOver()
+    {
+        mainScene.GameOver();
     }
 }

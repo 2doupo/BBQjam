@@ -6,6 +6,7 @@ public partial class MainScene : Node
 
     public const string StartInterfacePath = "res://Scenes/InterfaceStart.tscn";
     public const string InBetweenInterface = "res://Scenes/InterfaceInbetween.tscn";
+    public const string GameOverScene = "res://Scenes/GameOverScene.tscn";
     public const string Level1Path = "res://Scenes/Level1.tscn";
 
     private int currentLevel = 1;
@@ -23,7 +24,8 @@ public partial class MainScene : Node
         {
             case 0: LoadLevel(StartInterfacePath); break;
             case 1: LoadLevel(InBetweenInterface); break;
-            case 2: LoadLevel(Level1Path); break;
+            case 2: LoadLevel(GameOverScene); break;
+            case 3: LoadLevel(Level1Path); break;
         }
     }
 
@@ -43,13 +45,18 @@ public partial class MainScene : Node
 
     public void OpenNextLevel()
     {
-        LoadLevel(currentLevel + 1);
+        LoadLevel(currentLevel + 2);
     }
 
     public void FinishLevel()
     {
         currentLevel++;
         LoadLevel(1);
+    }
+
+    public void GameOver()
+    {
+        LoadLevel(2);
     }
 
 }

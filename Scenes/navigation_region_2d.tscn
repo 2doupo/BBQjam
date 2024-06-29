@@ -11,6 +11,7 @@ size = Vector2(74, 335)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D"]
 navigation_polygon = SubResource("NavigationPolygon_8me63")
+navigation_layers = 3
 constrain_avoidance = true
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
