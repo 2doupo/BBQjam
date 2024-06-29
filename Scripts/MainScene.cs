@@ -5,7 +5,7 @@ public partial class MainScene : Node
 {
 
     public const string StartInterfacePath = "res://Scenes/InterfaceStart.tscn";
-    public const string InBetweenInterface = "";
+    public const string InBetweenInterface = "res://Scenes/InterfaceInbetween.tscn";
     public const string Level1Path = "res://Scenes/Level1.tscn";
 
     private int currentLevel = 1;
@@ -32,7 +32,8 @@ public partial class MainScene : Node
         if (GetChildCount() > 0)
         {
             Node child = GetChild(0);
-            child.Free();
+            GD.Print(child);
+            child.QueueFree();
         }
         PackedScene scene = GD.Load<PackedScene>(path);
         Node sceneNode = scene.Instantiate();
