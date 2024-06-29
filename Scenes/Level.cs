@@ -2,11 +2,13 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class Level : Node2D
+public partial class Level : Node2D, IScene
 {
 
     private List<MailBox> AvailableBoxes;
     private int currentMailboxScore;
+    private MainScene mainScene;
+    private int currentLevel;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -47,7 +49,12 @@ public partial class Level : Node2D
 
     public void LevelEnded()
     {
-        GD.Print("LEVEL ENDED");
+        mainScene.FinishLevel();
     }
 
+    public void SetMainScene(MainScene scene, int currentLevel)
+    {
+        mainScene = scene;
+        this.currentLevel = currentLevel;
+    }
 }
