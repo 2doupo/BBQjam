@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1tdg1qitw3eg"]
+
+[ext_resource type="Texture2D" uid="uid://comq5r7jmiyff" path="res://Assets/arbre1.png" id="1_q8vk6"]
+
+[node name="Arbre1" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Arbre1" type="Sprite2D" parent="."]
+texture = ExtResource("1_q8vk6")
