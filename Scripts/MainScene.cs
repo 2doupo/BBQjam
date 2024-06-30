@@ -9,11 +9,12 @@ public partial class MainScene : Node
     public const string GameOverScene = "res://Scenes/GameOverScene.tscn";
     public const string Level1Path = "res://Scenes/level_2.tscn";
     public const string Level2Path = "res://Scenes/level_3.tscn";
+    public const string Level3Path = "res://Scenes/level_4.tscn";
 
     private int currentLevel = 1;
     private int currentScore = 0;
 
-    private int lastLevel = 3;
+    private int lastLevel = 4;
     public override void _Ready()
     {
         base._Ready();
@@ -30,6 +31,7 @@ public partial class MainScene : Node
             case 2: LoadLevel(GameOverScene); break;
             case 3: LoadLevel(Level1Path); break;
             case 4: LoadLevel(Level2Path); break;
+            case 5: LoadLevel(Level3Path); break;
         }
     }
 

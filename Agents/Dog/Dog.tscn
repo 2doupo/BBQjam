@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtja2hqy4c8eo"]
 
 [ext_resource type="Script" path="res://Agents/Dog/Dog.cs" id="1_kvcp3"]
-[ext_resource type="Texture2D" uid="uid://bjg1f0ikyv8lv" path="res://Agents/Dog/dog.jpeg" id="2_3jjef"]
+[ext_resource type="Texture2D" uid="uid://qc0pxy82qt5a" path="res://Assets/Chien.jpg" id="2_iunm4"]
 [ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_nyqev"]
 [ext_resource type="PackedScene" uid="uid://6vuwj8vmcmek" path="res://Agents/VisionZoneCircular.tscn" id="4_tlt37"]
 
@@ -9,7 +9,7 @@
 size = Vector2(41, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17lk2"]
-size = Vector2(21, 36)
+size = Vector2(39, 74)
 
 [node name="Dog" type="CharacterBody2D" node_paths=PackedStringArray("CircularZone", "TrackZone") groups=["Agent", "Dog"]]
 script = ExtResource("1_kvcp3")
@@ -18,8 +18,9 @@ TrackZone = NodePath("VisionZone")
 AutoPath = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_3jjef")
+rotation = 3.14159
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("2_iunm4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 2)
@@ -36,10 +37,11 @@ avoidance_mask = 2
 [node name="Catch" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catch"]
-position = Vector2(-14.5, 2)
+position = Vector2(-48.5, -1)
 shape = SubResource("RectangleShape2D_17lk2")
 
 [node name="VisionZone" parent="." instance=ExtResource("3_nyqev")]
+scale = Vector2(2.16, 1)
 
 [node name="VisionZone2" parent="." instance=ExtResource("4_tlt37")]
 scale = Vector2(2, 2)
