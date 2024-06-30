@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://exj1va2atkt8"]
+[gd_scene load_steps=4 format=3 uid="uid://exj1va2atkt8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8me63"]
-vertices = PackedVector2Array(59, 39, 1065, 45, 961, 114, 870, 114, 1066, 587, 959, 464, 53, 594, 870, 473, 764, 460, 161, 465, 161, 121, 762, 119)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(9, 6, 0, 10), PackedInt32Array(10, 0, 3, 11), PackedInt32Array(3, 7, 8, 11)])
+vertices = PackedVector2Array(59, 39, 1065, 45, 961, 114, 870, 114, 960, 289, 1066, 587, 960, 462, 870, 473, 764, 460, 763, 289, 763, 122, 762, 122, 762, 119, 959, 464, 959, 462, 53, 594, 161, 465, 161, 121)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1, 5, 6), PackedInt32Array(3, 7, 8, 9, 10), PackedInt32Array(10, 11, 12, 3), PackedInt32Array(13, 14, 6, 5), PackedInt32Array(13, 5, 15, 7), PackedInt32Array(8, 7, 15, 16), PackedInt32Array(16, 15, 0, 17), PackedInt32Array(17, 0, 3, 12)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(50, 29, 1075, 36, 1077, 597, 43, 605)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7t4k"]
-size = Vector2(74, 335)
+size = Vector2(70, 325)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p2i5"]
+size = Vector2(582, 318)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D"]
 navigation_polygon = SubResource("NavigationPolygon_8me63")
@@ -21,8 +24,14 @@ polygon = PackedVector2Array(171, 131, 752, 129, 754, 450, 171, 455)
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(880, 124, 951, 124, 949, 455, 880, 462)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ViewBlock" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(918, 292.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewBlock"]
+position = Vector2(915, 289.5)
 shape = SubResource("RectangleShape2D_q7t4k")
+
+[node name="ViewBlock2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViewBlock2"]
+position = Vector2(462, 291)
+shape = SubResource("RectangleShape2D_8p2i5")

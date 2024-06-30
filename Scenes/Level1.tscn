@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g1wdqfgv7tgx"]
+[gd_scene load_steps=11 format=3 uid="uid://g1wdqfgv7tgx"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_vo8kc"]
 [ext_resource type="PackedScene" uid="uid://exj1va2atkt8" path="res://Scenes/navigation_region_2d.tscn" id="2_qpfl3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3d40cm0v0b3t" path="res://Player/player.tscn" id="5_hv8bu"]
 [ext_resource type="PackedScene" uid="uid://rsimo1wl627a" path="res://Interactors/Box/Box.tscn" id="6_j5lwt"]
 [ext_resource type="PackedScene" uid="uid://dtja2hqy4c8eo" path="res://Agents/Dog/Dog.tscn" id="7_n3e75"]
+[ext_resource type="PackedScene" uid="uid://cr8ch2jh5cd4c" path="res://Agents/Camera/Camera.tscn" id="8_iesxl"]
 
 [sub_resource type="Curve2D" id="Curve2D_tcwau"]
 _data = {
@@ -62,3 +63,9 @@ path = NodePath("../CopPath")
 
 [node name="CopPath" type="Path2D" parent="Cop"]
 curve = SubResource("Curve2D_yw5c8")
+
+[node name="Camera" parent="." instance=ExtResource("8_iesxl")]
+position = Vector2(730, 142)
+rotation = 2.62979
+RotationMin = -25.0
+RotationMax = 25.0

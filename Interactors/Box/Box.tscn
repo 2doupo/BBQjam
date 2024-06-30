@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://rsimo1wl627a"]
+[gd_scene load_steps=4 format=3 uid="uid://rsimo1wl627a"]
 
-[ext_resource type="Texture2D" uid="uid://bux1vc62on4g7" path="res://Assets/Carton_in.jpg" id="1_d0vd7"]
+[ext_resource type="Script" path="res://Interactors/Box/Box.cs" id="1_x5t5o"]
+[ext_resource type="Texture2D" uid="uid://bux1vc62on4g7" path="res://Assets/Carton_in.jpg" id="2_6dpll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28y72"]
 size = Vector2(38, 37)
 
 [node name="Node2D" type="Area2D"]
+script = ExtResource("1_x5t5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_d0vd7")
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_6dpll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0.5)

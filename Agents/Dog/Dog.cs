@@ -16,22 +16,33 @@ public partial class Dog : AgentPath
     private double barkingTime = 1f;
     private double barkingTimer;
 
+    private Vector2 lastSeenPosition;
+
     public override void _Ready()
     {
         base._Ready();
         Area2D body = GetNode<Area2D>("Catch");
         body.BodyEntered += OnBodyEntered;
-        CircularZone.IsActive = false;
-        CircularZone.check = (p) =>
-        {
-            return true;
-        };
-        CircularZone.OnPlayerSeen += PlayerSeenCircular;
-        TrackZone.IsActive = false;
-        TrackZone.check = (p) =>
-        {
-            return p.currentState == player.State.Free;
-        };
+        CircularZone.Initialize(
+            this,
+            PlayerSeenCircular,
+            (p) => { },
+            (p) =>
+            {
+                return true;
+            },
+            false);
+
+        TrackZone.Initialize(
+            this,
+            (p) => { ChangeState(DogState.Following); },
+            (p) => { ChangeState(DogState.Tracking); },
+            (p) =>
+            {
+                return p.currentState == player.State.Free && TrackZone.RaycastCheck(p);
+            },
+            false
+            );
         currentState = DogState.Walking;
         _navigationAgent.TargetReached += OnTargetReached;
     }
@@ -69,7 +80,7 @@ public partial class Dog : AgentPath
     public void ChangeState(DogState newState)
     {
         ExitState(currentState);
-        GD.Print("went from " + currentState + " to " + newState);
+        //GD.Print("went from " + currentState + " to " + newState);
         currentState = newState;
         EnterState(currentState);
     }
@@ -83,10 +94,12 @@ public partial class Dog : AgentPath
                 CircularZone.IsActive = false;
                 break;
             case DogState.Tracking:
-                TrackZone.IsActive = false;
                 OverwriteStop();
+                TrackZone.IsActive = false;
                 break;
             case DogState.Following:
+                OverwriteTarget(lastSeenPosition, 100);
+                OverwriteStop();
                 break;
         }
     }
@@ -105,6 +118,7 @@ public partial class Dog : AgentPath
                 TrackZone.IsActive = true;
                 break;
             case DogState.Following:
+                TrackZone.IsActive = true;
                 break;
         }
     }
@@ -125,8 +139,9 @@ public partial class Dog : AgentPath
     }
     private void ProcessFollowing(double time)
     {
-
-
+        lastSeenPosition = TrackZone.GetPlayerPosition();
+        OverwriteTarget(lastSeenPosition, 100);
+        _navigationAgent.Velocity = Transform.Origin.DirectionTo(_navigationAgent.GetNextPathPosition()) * currentSpeed;
     }
 
     private void OnTargetReached()

@@ -55,13 +55,15 @@ public partial class AgentPath : CharacterBody2D
         {
             NextStepPath();
         }
-    }
 
+        if (_navigationAgent.GetCurrentNavigationPath().Length == 0 && !_navigationAgent.IsTargetReachable()) NextStepPath();
+    }
 
     public void NextStepPath()
     {
         currentIndex = currentIndex < path.Curve.PointCount - 1 ? currentIndex + 1 : 0;
         _navigationAgent.TargetPosition = path.Curve.GetPointPosition(currentIndex);
+        if (IsOverwriten) IsOverwriten = false;
     }
 
     public void OverwriteTarget(Vector2 position, float speed)
