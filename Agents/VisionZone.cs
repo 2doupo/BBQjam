@@ -54,7 +54,7 @@ public partial class VisionZone : Area2D
             if (!previousValue && value)
             {
                 EmitSignal(SignalName.OnPlayerSeen, _player.Transform.Origin);
-                MusicManager.instance.PlayMusic(MusicManager.Music.SoundSpotted);
+                
             }
 
             if (previousValue && !value) EmitSignal(SignalName.OnPlayerLost, _player.Transform.Origin);

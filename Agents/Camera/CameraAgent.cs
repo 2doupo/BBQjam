@@ -31,6 +31,7 @@ public partial class CameraAgent : CharacterBody2D
             (e) =>
             {
                 isSeingPlayer = true;
+                MusicManager.instance.PlayMusic(MusicManager.Music.SoundTalkie);
             },
             (e) =>
             {

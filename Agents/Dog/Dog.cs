@@ -112,10 +112,12 @@ public partial class Dog : AgentPath
                 NextStepPath();
                 break;
             case DogState.Barking:
+                MusicManager.instance.PlayMusic(MusicManager.Music.SoundDog);
                 CircularZone.IsActive = true;
                 barkingTimer = 0;
                 break;
             case DogState.Tracking:
+                MusicManager.instance.PlayMusic(MusicManager.Music.SoundDog);
                 TrackZone.IsActive = true;
                 break;
             case DogState.Following:
@@ -166,6 +168,6 @@ public partial class Dog : AgentPath
     {
         ChangeState(DogState.Tracking);
         OverwriteTarget(position, 75);
-        MusicManager.instance.PlayMusic(MusicManager.Music.SoundDog);
+        
     }
 }

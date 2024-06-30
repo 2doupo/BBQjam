@@ -15,7 +15,11 @@ public partial class CopCar : AgentPath
         body.BodyEntered += OnBodyEntered;
         visionZone.Initialize(
             this,
-            (p) => seesPlayer = true,
+            (p) =>
+            {
+                seesPlayer = true;
+                MusicManager.instance.PlayMusic(MusicManager.Music.SoundSpotted);
+            },
             (p) =>
             {
                 seesPlayer = false;

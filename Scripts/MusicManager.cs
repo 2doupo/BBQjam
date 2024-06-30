@@ -4,14 +4,16 @@ using System;
 public partial class MusicManager : Node
 {
 
-    public enum Music { MusicMain, MusicHidden, SoundSpotted, MusicMenu, SoundDog, SoundPost }
+    public enum Music { MusicMain, MusicHidden, SoundSpotted, MusicMenu, SoundDog, SoundPost , SoundDog2, SoundTalkie}
 
     public const string musicMain = "MusicMain";
     public const string musicHidden = "MusicHidden";
     public const string soundSpotted = "SoundSpotted";
     public const string musicMenu = "MusicMenu";
     public const string soundDog = "DogBark";
+    public const string soundDog2 = "DogBark2";
     public const string soundPost = "SoundPost";
+    public const string soundTalkie = "SoundTalkie";
 
     public static MusicManager instance;
 
@@ -36,8 +38,12 @@ public partial class MusicManager : Node
                 return GetNode<AudioStreamPlayer>(musicMenu);
             case Music.SoundDog:
                 return GetNode<AudioStreamPlayer>(soundDog);
+            case Music.SoundDog2:
+                return GetNode<AudioStreamPlayer>(soundDog2);
             case Music.SoundPost:
                 return GetNode<AudioStreamPlayer>(soundPost);
+            case Music.SoundTalkie:
+                return GetNode<AudioStreamPlayer>(soundTalkie);
         }
         return null;
     }

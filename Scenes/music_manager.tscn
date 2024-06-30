@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7otxiea10vwm"]
+[gd_scene load_steps=10 format=3 uid="uid://c7otxiea10vwm"]
 
 [ext_resource type="Script" path="res://Scripts/MusicManager.cs" id="1_eqjqk"]
 [ext_resource type="AudioStream" uid="uid://cskr2gya1515f" path="res://Musics/MusicMain.wav" id="2_xybnx"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://dfpmfo55n32nn" path="res://Musics/MusicMenus.wav" id="5_jh2nd"]
 [ext_resource type="AudioStream" uid="uid://4k2ju2lhw8m3" path="res://Musics/SndDog.wav" id="6_ljqco"]
 [ext_resource type="AudioStream" uid="uid://irx8ivmveftk" path="res://Musics/Snd Livraison.wav" id="7_dw18y"]
+[ext_resource type="AudioStream" uid="uid://c67ka2ok57v18" path="res://Musics/SndDog2.wav" id="8_jy1u4"]
+[ext_resource type="AudioStream" uid="uid://dxeprfgj0pwo1" path="res://Musics/SndTalkie1.wav" id="9_0xhu4"]
 
 [node name="MusicManager" type="Node2D"]
 script = ExtResource("1_eqjqk")
@@ -28,3 +30,9 @@ stream = ExtResource("6_ljqco")
 
 [node name="SoundPost" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_dw18y")
+
+[node name="DogBark2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jy1u4")
+
+[node name="SoundTalkie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_0xhu4")

@@ -56,7 +56,7 @@ public partial class MainScene : Node
         }
         else
         {
-            MusicManager.instance.PlayMusic(MusicManager.Music.MusicMain);
+            MusicManager.instance.PlayMusic(MusicManager.Music.MusicMenu);
         }
     }
 
