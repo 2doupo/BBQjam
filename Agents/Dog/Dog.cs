@@ -39,7 +39,7 @@ public partial class Dog : AgentPath
             (p) => { ChangeState(DogState.Tracking); },
             (p) =>
             {
-                return p.currentState == player.State.Free;
+                return p.currentState == player.State.Free && TrackZone.RaycastCheck(p);
             },
             false
             );

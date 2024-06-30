@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctuccbgbax5lq"]
 
-[ext_resource type="Texture2D" uid="uid://coks3uq5vjkev" path="res://Agents/Cops/Copcar.jpeg" id="1_07t2g"]
 [ext_resource type="Script" path="res://Agents/Cops/CopCar.cs" id="1_jcspy"]
+[ext_resource type="Texture2D" uid="uid://di4tn3abrpel3" path="res://Assets/police.jpg" id="2_w4mxv"]
 [ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_hulip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amq7y"]
@@ -10,13 +10,14 @@ size = Vector2(34, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5776"]
 size = Vector2(19, 26)
 
-[node name="CopCar" type="CharacterBody2D" node_paths=PackedStringArray("visionZone")]
+[node name="CopCar" type="CharacterBody2D" node_paths=PackedStringArray("visionZone") groups=["Agent", "Cop"]]
 script = ExtResource("1_jcspy")
 visionZone = NodePath("VisionZone")
 
 [node name="CarSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_07t2g")
+rotation = 1.5708
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_w4mxv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_amq7y")
@@ -26,12 +27,12 @@ target_desired_distance = 20.0
 avoidance_enabled = true
 avoidance_layers = 2
 avoidance_mask = 2
-debug_enabled = true
 
 [node name="Catch" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catch"]
-position = Vector2(-21.5, 0)
+position = Vector2(-8, 1)
 shape = SubResource("RectangleShape2D_w5776")
 
 [node name="VisionZone" parent="." instance=ExtResource("3_hulip")]
+position = Vector2(6, 0)

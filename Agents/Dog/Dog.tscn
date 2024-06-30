@@ -11,7 +11,7 @@ size = Vector2(41, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17lk2"]
 size = Vector2(21, 36)
 
-[node name="Dog" type="CharacterBody2D" node_paths=PackedStringArray("CircularZone", "TrackZone")]
+[node name="Dog" type="CharacterBody2D" node_paths=PackedStringArray("CircularZone", "TrackZone") groups=["Agent", "Dog"]]
 script = ExtResource("1_kvcp3")
 CircularZone = NodePath("VisionZone2")
 TrackZone = NodePath("VisionZone")
