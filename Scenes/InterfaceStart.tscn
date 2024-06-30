@@ -1,30 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://dovvw08hg6d6v"]
+[gd_scene load_steps=4 format=3 uid="uid://dovvw08hg6d6v"]
 
-[ext_resource type="Script" path="res://Scripts/InterfaceStart.cs" id="1_hbd1u"]
+[ext_resource type="Texture2D" uid="uid://2rudtq2uvmg6" path="res://Assets/MainMenuV2.jpg" id="1_e3cto"]
+[ext_resource type="PackedScene" uid="uid://bj032aac0b54c" path="res://Interfaces/paper_button.tscn" id="2_f7xbn"]
+[ext_resource type="Texture2D" uid="uid://by6ssus7cf5r8" path="res://Assets/Commencer.jpg" id="3_gp5s4"]
 
-[node name="Control2" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hbd1u")
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 377.0
-offset_top = 65.0
-offset_right = 741.0
-offset_bottom = 211.0
-theme_override_font_sizes/font_size = 100
-text = "Facteur"
+offset_left = -11.0
+offset_top = -85.0
+offset_right = 1170.0
+offset_bottom = 802.0
+texture = ExtResource("1_e3cto")
+expand_mode = 1
 
-[node name="StartGame" type="Button" parent="."]
+[node name="TextureButton" parent="." instance=ExtResource("2_f7xbn")]
 layout_mode = 0
-offset_left = 429.0
-offset_top = 355.0
-offset_right = 437.0
-offset_bottom = 363.0
-scale = Vector2(2.56, 2.44)
-text = "Start Game"
+offset_left = 849.0
+offset_top = 416.0
+offset_right = 1378.0
+offset_bottom = 1858.0
+rotation = 1.43202
+scale = Vector2(0.2, 0.2)
+
+[node name="Commencer" type="Sprite2D" parent="TextureButton"]
+position = Vector2(245.003, 709.389)
+rotation = -1.5708
+scale = Vector2(0.588262, 0.4)
+texture = ExtResource("3_gp5s4")
