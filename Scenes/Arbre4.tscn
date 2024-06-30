@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c81yfdb27ovqd" path="res://Assets/arbre4.png" id="1_36djo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_swjx5"]
-radius = 18.4388
-height = 59.1952
+radius = 33.1794
+height = 128.839
 
 [node name="Arbre4" type="StaticBody2D"]
 
@@ -14,5 +14,5 @@ rotation = -0.702958
 shape = SubResource("CapsuleShape2D_swjx5")
 
 [node name="Arbre4" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_36djo")

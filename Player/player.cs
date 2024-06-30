@@ -29,8 +29,8 @@ public partial class player : CharacterBody2D
         {
             return currentState switch
             {
-                State.Free => 80f,
-                State.InTheBox => 30f,
+                State.Free => 150f,
+                State.InTheBox => 70f,
                 _ => 0
             };
         }
@@ -43,6 +43,7 @@ public partial class player : CharacterBody2D
     private bool isInit = false;
 
     private Sprite2D boxSprite;
+    private float ranRot = 0;
 
     [Signal]
     public delegate void OnPlayerCaughtEventHandler();
@@ -67,10 +68,13 @@ public partial class player : CharacterBody2D
             if (boxTimer > BoxDuration) currentState = State.Free;
         }
 
+
+
         Vector2 Direction = new Vector2(0, 0);
         if (Input.IsActionPressed("ui_up"))
         {
             Direction += new Vector2(0, -1);
+
         }
         if (Input.IsActionPressed("ui_down"))
         {
@@ -84,17 +88,28 @@ public partial class player : CharacterBody2D
         {
             Direction += new Vector2(1, 0);
         }
+        if (Input.IsActionJustPressed("ui_up") ||
+            Input.IsActionJustPressed("ui_down") ||
+            Input.IsActionJustPressed("ui_left") ||
+            Input.IsActionJustPressed("ui_right"))
+        {
+            ranRot = new RandomNumberGenerator().RandfRange(-15, 15);
+        }
         Velocity = Direction.Normalized() * CurrentSpeed;
+
+        if (Direction.Length() > 0)
+            RotationDegrees = Mathf.RadToDeg(Direction.Normalized().Angle()) + -90f + ranRot;
+
         //_navigationAgent.TargetPosition = Transform.Origin + Direction;
         //_navigationAgent.Velocity = GlobalTransform.Origin.DirectionTo(_navigationAgent.GetNextPathPosition()) * CurrentSpeed;
 
         MoveAndSlide();
     }
 
-    private void VelocityComputed(Vector2 safeVelocity)
-    {
-        this.Velocity = safeVelocity;
-    }
+    //private void VelocityComputed(Vector2 safeVelocity)
+    //{
+    //    this.Velocity = safeVelocity;
+    //}
 
     private async void ActorSetup()
     {
@@ -113,5 +128,6 @@ public partial class player : CharacterBody2D
         boxTimer = 0;
         currentState = State.InTheBox;
     }
+
 
 }

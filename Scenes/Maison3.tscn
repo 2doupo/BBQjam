@@ -3,13 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://d1a333483rkp5" path="res://Assets/Maison_3.png" id="1_ggron"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76s1v"]
-size = Vector2(68, 69)
+size = Vector2(195, 206)
 
 [node name="Maison3" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_ggron")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 2)
 shape = SubResource("RectangleShape2D_76s1v")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://chm8h12dnda8a"]
+
+[ext_resource type="Script" path="res://Scripts/CameraManager.cs" id="1_rh2mt"]
+
+[node name="Camera2D" type="Camera2D"]
+ignore_rotation = false
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+script = ExtResource("1_rh2mt")

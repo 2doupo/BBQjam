@@ -1,121 +1,140 @@
-[gd_scene load_steps=8 format=3 uid="uid://1uqg7j45s7u"]
+[gd_scene load_steps=13 format=3 uid="uid://1uqg7j45s7u"]
 
 [ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="1_pah2t"]
+[ext_resource type="Script" path="res://Scenes/Level.cs" id="1_pjppk"]
 [ext_resource type="PackedScene" uid="uid://bvqcf2tsy06ji" path="res://Scenes/Maison3.tscn" id="2_4h86o"]
 [ext_resource type="PackedScene" uid="uid://c1tdg1qitw3eg" path="res://Scenes/Arbre1.tscn" id="2_hpgnl"]
 [ext_resource type="PackedScene" uid="uid://hbdq1ba3g2ns" path="res://Scenes/Arbre4.tscn" id="3_dy18g"]
 [ext_resource type="PackedScene" uid="uid://cc3nrl77j8y7g" path="res://Scenes/Arbre2.tscn" id="4_8xww1"]
 [ext_resource type="PackedScene" uid="uid://fucmomxrbcfm" path="res://Scenes/Maison2.tscn" id="5_3aqmi"]
 [ext_resource type="PackedScene" uid="uid://be3g7y1n0bn2t" path="res://Scenes/Maison1.tscn" id="5_x1ae5"]
+[ext_resource type="PackedScene" uid="uid://3d40cm0v0b3t" path="res://Player/player.tscn" id="9_10oee"]
+[ext_resource type="PackedScene" uid="uid://0x6o4cgfakp8" path="res://Interactors/MailBox/MailBox.tscn" id="10_p5to3"]
+[ext_resource type="PackedScene" uid="uid://chm8h12dnda8a" path="res://Player/PlayerCamera.tscn" id="11_fkppx"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wihm0"]
+vertices = PackedVector2Array(1361, -327, 1410, 880, 1370, -95, 1191, 774, 1227, 760, 1380, 721, 1181, 810, -218, 124, -208, -253, -208, -95, 75, 34, 85, -2, 266, -10, 305, -10, 165, 17, 1348, 37, 1299, 398, 1338, 73, -160, 451, -232, 608, -219, 151, -166, 246, 592, -58, 574, -53, 711, -164, 1338, 1, 1292, -282, 1187, -236, 1191, -241, -128, 224, -49, 364, -57, 359, 375, 632, 383, 601, 498, 586, 530, 605, 383, 644, 625, -276, 764, -165, 732, -146, 621, -273, 621, 516, 787, 451, 814, 486, 655, 616, 620, 554, 1118, 701, 1082, 711, 1070, 688, 1134, 571, 234, -29, 1001, -106, 1065, 39, 985, -12, 982, -33, 452, 46, 538, -24, 531, 3, 1311, 100, 898, -112, 880, -98, 854, -113, 834, -145, 955, -92, 356, -61, 356, -70, 254, 121, 256, 99, 1212, 73, 1239, 100, 1162, 428, 1102, 443, 510, -206, 356, -81, 357, -99, 348, -210, 483, -242, 337, -131, 1174, -214, 1176, -218, 1189, -188, 623, -50, 712, -114, 970, 603, 1015, 529, -176, 100, -79, 358, 652, 723, 601, 586, 688, 713, 853, -75, 872, -77, 1311, -26, 305, -151, -241, 894, -235, 699, -149, 740, -11, 892, -22, 751, 479, 554, 375, 570, 1191, -273, 903, 884, 1055, 738, 1045, 774, 1055, 810, 215, -61, 75, -38, 1275, 110, 1163, 432, 337, -29, 102, 628, 261, 601, 269, 632, 92, 664, 539, 34, 1202, 37, 248, 80, 592, 64, 925, 419, 929, 417, 977, 9, 4, 421, -16, 397, 112, 326, -100, 367, -112, 386, -114, 408, -106, 427, -41, 506, -63, 476, -45, 489, -23, 490, 1147, -198, 1115, -198, 941, -109, 1088, -214, 1181, 738, 1176, 560, 1154, 711, 756, 739, 803, 800, 761, 786, 751, 750, 724, 723, 323, 884, 312, 744, 317, 744, 383, 870, 712, -75, 645, -28, 731, -43, 653, 3, 751, 822, 1313, -223, 1318, -225, 7, -321, -206, -321, -204, -382, 1034, -338, 283, -325, 180, 692, 183, 734, 29, 701, 875, -56, 834, -43, -51, 34, -52, 35, -174, 103, -61, -2, 92, 592, 269, 570, 904, 3, 802, -24, 479, 515, 353, 548, 215, -100, 48, -65, 122, -84, 601, 484, 242, 140, 889, 369, 585, -324, 12, 440, 1082, 837, 1275, -36, 1175, -300, 724, 849, 625, 750, 598, 644, 1154, 837, 763, -24, 645, 34, 960, 23, 291, 654, 65, 691, 267, -151, 235, -132, 58, -198, 12, -75, 7, -95, 1075, -215, 919, -116, 825, -152, 561, 56, 221, 149, 291, 548, 65, 565, 199, 148, 499, 483, 322, 540, 569, 464, 531, 464, 29, 555, 1148, -316, 1043, -338, 1115, -317, 1089, -300, 1072, -274, 793, -278, 802, -165, 917, 19, 623, 56, 10, 462, 1118, 847, 688, 859, 598, 870, 652, 849, 625, 822, 615, 786, 569, 605, 353, 654, 322, 662, 311, 681, 938, 27, 1072, -241, -2, 481, -34, 592, 1239, -26, 1212, 1, 238, 890, -7, 691, -34, 664, -44, 628, -7, 565, 181, 135, 138, 86, 48, 61, 130, 67, 12, 71, 205, 31, 187, 18, 144, 26, 132, 45, -24, 61, -51, -38, -24, -65)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 1, 6), PackedInt32Array(7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14), PackedInt32Array(2, 1, 5, 15), PackedInt32Array(15, 5, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 24), PackedInt32Array(2, 15, 25), PackedInt32Array(26, 27, 28), PackedInt32Array(29, 30, 31), PackedInt32Array(32, 33, 34, 35, 36), PackedInt32Array(37, 38, 39, 24, 40), PackedInt32Array(41, 42, 43, 44, 45), PackedInt32Array(46, 47, 48, 49), PackedInt32Array(50, 12, 11), PackedInt32Array(51, 52, 53, 54), PackedInt32Array(55, 56, 57), PackedInt32Array(58, 17, 16), PackedInt32Array(59, 60, 61, 62), PackedInt32Array(51, 54, 63), PackedInt32Array(64, 65, 55), PackedInt32Array(66, 67, 68, 69, 70, 71), PackedInt32Array(72, 73, 74), PackedInt32Array(75, 76, 72, 74, 77), PackedInt32Array(78, 79, 80), PackedInt32Array(81, 22, 24, 39, 82), PackedInt32Array(83, 84, 71, 49, 48), PackedInt32Array(85, 7, 9), PackedInt32Array(29, 31, 86, 21), PackedInt32Array(87, 88, 45, 44, 89), PackedInt32Array(90, 61, 60, 91), PackedInt32Array(2, 25, 92), PackedInt32Array(75, 77, 93), PackedInt32Array(94, 95, 96, 97), PackedInt32Array(98, 97, 96), PackedInt32Array(99, 34, 33, 100), PackedInt32Array(26, 28, 101), PackedInt32Array(102, 48, 47, 103), PackedInt32Array(102, 103, 104), PackedInt32Array(102, 104, 105), PackedInt32Array(106, 50, 11, 107), PackedInt32Array(70, 108, 58, 16, 109), PackedInt32Array(110, 64, 55), PackedInt32Array(111, 112, 113, 114), PackedInt32Array(55, 57, 115), PackedInt32Array(116, 68, 67, 117, 118), PackedInt32Array(84, 119, 120, 71), PackedInt32Array(121, 53, 52), PackedInt32Array(122, 123, 124), PackedInt32Array(21, 86, 125), PackedInt32Array(18, 21, 125, 126), PackedInt32Array(18, 126, 127), PackedInt32Array(18, 127, 128), PackedInt32Array(129, 18, 128, 130), PackedInt32Array(129, 130, 131), PackedInt32Array(129, 131, 132), PackedInt32Array(78, 80, 51, 133), PackedInt32Array(134, 133, 51), PackedInt32Array(135, 136, 134, 51, 63), PackedInt32Array(4, 3, 137, 138), PackedInt32Array(138, 137, 139, 49), PackedInt32Array(49, 139, 46), PackedInt32Array(140, 84, 83, 141, 142, 143), PackedInt32Array(140, 143, 144, 44), PackedInt32Array(44, 144, 89), PackedInt32Array(145, 146, 147, 148), PackedInt32Array(81, 82, 149, 150), PackedInt32Array(150, 149, 151, 152), PackedInt32Array(153, 142, 141, 102), PackedInt32Array(2, 154, 155), PackedInt32Array(0, 2, 155), PackedInt32Array(0, 155, 26), PackedInt32Array(156, 157, 158, 159, 160), PackedInt32Array(161, 162, 98, 96, 163), PackedInt32Array(90, 91, 164, 165), PackedInt32Array(166, 167, 168, 85, 9, 169), PackedInt32Array(112, 111, 170, 171), PackedInt32Array(69, 108, 70), PackedInt32Array(165, 164, 172, 173), PackedInt32Array(174, 99, 100, 175), PackedInt32Array(176, 106, 107, 177, 178), PackedInt32Array(42, 41, 179), PackedInt32Array(180, 66, 71, 181), PackedInt32Array(76, 75, 160, 182), PackedInt32Array(183, 122, 124), PackedInt32Array(102, 105, 184), PackedInt32Array(2, 92, 185), PackedInt32Array(26, 101, 186, 0), PackedInt32Array(13, 110, 55, 117), PackedInt32Array(187, 153, 102), PackedInt32Array(88, 87, 188, 189), PackedInt32Array(190, 6, 1), PackedInt32Array(152, 151, 191, 192), PackedInt32Array(193, 121, 52), PackedInt32Array(114, 113, 194, 195), PackedInt32Array(75, 93, 196), PackedInt32Array(178, 75, 196, 197), PackedInt32Array(178, 197, 176), PackedInt32Array(198, 178, 177, 199, 200), PackedInt32Array(201, 136, 135, 202, 62, 203), PackedInt32Array(55, 115, 204), PackedInt32Array(205, 206, 171, 170, 207, 208), PackedInt32Array(180, 209, 174, 175, 210, 205), PackedInt32Array(42, 179, 211, 180, 181), PackedInt32Array(71, 120, 181), PackedInt32Array(180, 211, 212), PackedInt32Array(180, 212, 209), PackedInt32Array(205, 210, 206), PackedInt32Array(208, 207, 213, 124), PackedInt32Array(0, 186, 214), PackedInt32Array(215, 0, 214, 216), PackedInt32Array(215, 216, 217), PackedInt32Array(215, 217, 218), PackedInt32Array(219, 220, 38, 37, 182), PackedInt32Array(202, 59, 62), PackedInt32Array(173, 172, 221, 222, 192, 191), PackedInt32Array(223, 183, 124, 213), PackedInt32Array(102, 184, 224), PackedInt32Array(225, 187, 102), PackedInt32Array(225, 102, 226), PackedInt32Array(227, 225, 226), PackedInt32Array(228, 227, 226), PackedInt32Array(229, 228, 226), PackedInt32Array(229, 226, 189), PackedInt32Array(188, 229, 189), PackedInt32Array(230, 88, 189), PackedInt32Array(230, 189, 36, 35), PackedInt32Array(231, 32, 36, 148), PackedInt32Array(232, 231, 148, 147, 233), PackedInt32Array(222, 221, 234), PackedInt32Array(224, 190, 1), PackedInt32Array(215, 218, 235), PackedInt32Array(201, 215, 235), PackedInt32Array(201, 235, 136), PackedInt32Array(203, 62, 220), PackedInt32Array(219, 203, 220), PackedInt32Array(159, 219, 182), PackedInt32Array(195, 194, 232, 233, 161, 163), PackedInt32Array(96, 129, 132, 236, 237), PackedInt32Array(234, 193, 52), PackedInt32Array(2, 185, 238), PackedInt32Array(52, 2, 238), PackedInt32Array(52, 238, 239), PackedInt32Array(52, 239, 116), PackedInt32Array(102, 224, 1), PackedInt32Array(102, 1, 240), PackedInt32Array(226, 102, 240, 145), PackedInt32Array(148, 226, 145), PackedInt32Array(241, 163, 96), PackedInt32Array(242, 241, 96), PackedInt32Array(243, 242, 96), PackedInt32Array(237, 243, 96), PackedInt32Array(244, 237, 236), PackedInt32Array(213, 244, 236, 223), PackedInt32Array(245, 208, 124), PackedInt32Array(246, 245, 124), PackedInt32Array(247, 248, 246, 124, 249), PackedInt32Array(222, 234, 52, 118), PackedInt32Array(55, 204, 118, 117), PackedInt32Array(118, 52, 116), PackedInt32Array(13, 117, 250), PackedInt32Array(13, 250, 251), PackedInt32Array(13, 251, 14), PackedInt32Array(10, 14, 252), PackedInt32Array(10, 252, 253), PackedInt32Array(10, 253, 248, 247), PackedInt32Array(254, 249, 124), PackedInt32Array(254, 124, 167, 166), PackedInt32Array(255, 169, 9), PackedInt32Array(256, 255, 9), PackedInt32Array(256, 9, 200, 199), PackedInt32Array(198, 200, 156), PackedInt32Array(160, 198, 156), PackedInt32Array(160, 159, 182)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-214, -393, -252, 905, 1421, 890, 1371, -337)])
+source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_pjppk")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(575, 254)
-scale = Vector2(0.290719, 0.290719)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_pah2t")
 
-[node name="Arbre1" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(290, 152)
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_wihm0")
+navigation_layers = 3
 
-[node name="Arbre4" parent="." instance=ExtResource("3_dy18g")]
-position = Vector2(417, 101)
+[node name="Items" type="Node2D" parent="NavigationRegion2D"]
 
-[node name="Arbre2" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(190, 341)
+[node name="Arbre1" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(1272, 37)
 
-[node name="Arbre3" parent="." instance=ExtResource("4_8xww1")]
-position = Vector2(586, 96)
+[node name="Arbre4" parent="NavigationRegion2D/Items" instance=ExtResource("3_dy18g")]
+position = Vector2(194, 78)
 
-[node name="Maison2" parent="." instance=ExtResource("5_3aqmi")]
-position = Vector2(322, 71)
+[node name="Arbre2" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(9, -2)
+
+[node name="Arbre3" parent="NavigationRegion2D/Items" instance=ExtResource("4_8xww1")]
+position = Vector2(592, -3)
+
+[node name="Maison2" parent="NavigationRegion2D/Items" instance=ExtResource("5_3aqmi")]
+position = Vector2(203, -204)
 rotation = -0.512778
 
-[node name="Maison1" parent="." instance=ExtResource("5_x1ae5")]
-position = Vector2(141, 266)
+[node name="Maison1" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
+position = Vector2(-59, 226)
 rotation = -0.512778
 
-[node name="Maison3" parent="." instance=ExtResource("5_3aqmi")]
-position = Vector2(149, 418)
+[node name="Maison3" parent="NavigationRegion2D/Items" instance=ExtResource("5_3aqmi")]
+position = Vector2(-154, 596)
 rotation = -1.13564
 
-[node name="Maison4" parent="." instance=ExtResource("5_x1ae5")]
-position = Vector2(513, 68)
+[node name="Maison4" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
+position = Vector2(521, -139)
 rotation = 0.889374
 
-[node name="Maison5" parent="." instance=ExtResource("2_4h86o")]
-position = Vector2(210, 173)
+[node name="Maison5" parent="NavigationRegion2D/Items" instance=ExtResource("2_4h86o")]
+position = Vector2(-97, -210)
 
-[node name="Arbre9" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(653, 522)
+[node name="Arbre9" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(1115, 774)
 
-[node name="Arbre10" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(650, 156)
+[node name="Arbre10" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(780, -95)
 rotation = 0.267204
+scale = Vector2(1, 1)
 
-[node name="Arbre11" parent="." instance=ExtResource("3_dy18g")]
-position = Vector2(777, 105)
+[node name="Arbre11" parent="NavigationRegion2D/Items" instance=ExtResource("3_dy18g")]
+position = Vector2(931, -49)
 rotation = 0.267204
+scale = Vector2(1, 1)
 
-[node name="Arbre12" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(286, 233)
+[node name="Arbre12" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(283, -81)
 rotation = 0.267204
+scale = Vector2(1, 1)
 
-[node name="Arbre13" parent="." instance=ExtResource("4_8xww1")]
-position = Vector2(957, 130)
+[node name="Arbre13" parent="NavigationRegion2D/Items" instance=ExtResource("4_8xww1")]
+position = Vector2(1133, -263)
 rotation = 0.267204
+scale = Vector2(1, 1)
 
-[node name="Maison11" parent="." instance=ExtResource("5_3aqmi")]
-position = Vector2(739, 180)
+[node name="Maison11" parent="NavigationRegion2D/Items" instance=ExtResource("5_3aqmi")]
+position = Vector2(934, -246)
 rotation = -0.245573
 
-[node name="Maison12" parent="." instance=ExtResource("5_x1ae5")]
-position = Vector2(1017, 502)
+[node name="Maison12" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
+position = Vector2(1242, 580)
 rotation = -0.245573
 
-[node name="Maison13" parent="." instance=ExtResource("5_3aqmi")]
-position = Vector2(1104, 423)
+[node name="Maison13" parent="NavigationRegion2D/Items" instance=ExtResource("5_3aqmi")]
+position = Vector2(937, 744)
 rotation = -0.868432
 
-[node name="Maison14" parent="." instance=ExtResource("5_x1ae5")]
-position = Vector2(885, 90)
+[node name="Maison14" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
+position = Vector2(1181, -121)
 rotation = 1.15658
+scale = Vector2(1, 1)
 
-[node name="Maison15" parent="." instance=ExtResource("2_4h86o")]
-position = Vector2(1001, 52)
+[node name="Arbre14" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(547, 534)
 rotation = 0.267204
+scale = Vector2(1, 1)
 
-[node name="Arbre14" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(779, 594)
-rotation = 0.267204
+[node name="Arbre5" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(685, 786)
 
-[node name="Arbre5" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(501, 571)
+[node name="Arbre6" parent="NavigationRegion2D/Items" instance=ExtResource("3_dy18g")]
+position = Vector2(-50, 419)
 
-[node name="Arbre6" parent="." instance=ExtResource("3_dy18g")]
-position = Vector2(253, 569)
+[node name="Arbre7" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
+position = Vector2(26, 628)
 
-[node name="Arbre7" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(201, 540)
+[node name="Arbre8" parent="NavigationRegion2D/Items" instance=ExtResource("4_8xww1")]
+position = Vector2(322, 595)
 
-[node name="Arbre8" parent="." instance=ExtResource("4_8xww1")]
-position = Vector2(185, 486)
-
-[node name="Maison6" parent="." instance=ExtResource("5_3aqmi")]
-position = Vector2(722, 556)
-rotation = -0.512778
-
-[node name="Maison7" parent="." instance=ExtResource("5_x1ae5")]
-position = Vector2(340, 586)
+[node name="Maison7" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
+position = Vector2(153, 797)
 rotation = 1.49409
 
-[node name="Maison8" parent="." instance=ExtResource("5_3aqmi")]
-position = Vector2(590, 575)
-rotation = -0.097201
-
-[node name="Maison9" parent="." instance=ExtResource("5_x1ae5")]
-position = Vector2(902, 552)
+[node name="Maison9" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
+position = Vector2(825, 554)
 rotation = 0.889374
 
-[node name="Maison10" parent="." instance=ExtResource("2_4h86o")]
-position = Vector2(432, 580)
+[node name="Maison10" parent="NavigationRegion2D/Items" instance=ExtResource("2_4h86o")]
+position = Vector2(494, 755)
+
+[node name="Player" parent="." instance=ExtResource("9_10oee")]
+position = Vector2(291, 341)
+
+[node name="MailBox" parent="." instance=ExtResource("10_p5to3")]
+position = Vector2(955, 335)
+
+[node name="Camera2D" parent="." instance=ExtResource("11_fkppx")]

@@ -20,6 +20,7 @@ public partial class AgentPath : CharacterBody2D
     protected bool isInit = false;
     private bool IsOverwriten = false;
 
+
     public override void _Ready()
     {
         _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");

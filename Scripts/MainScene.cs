@@ -7,7 +7,7 @@ public partial class MainScene : Node
     public const string StartInterfacePath = "res://Scenes/InterfaceStart.tscn";
     public const string InBetweenInterface = "res://Scenes/InterfaceInbetween.tscn";
     public const string GameOverScene = "res://Scenes/GameOverScene.tscn";
-    public const string Level1Path = "res://Scenes/Level1.tscn";
+    public const string Level1Path = "res://Scenes/level_2.tscn";
 
     private int currentLevel = 1;
 

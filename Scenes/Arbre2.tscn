@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://b8t812oxodk77" path="res://Assets/arbre2.png" id="1_8cn5e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0nnf6"]
-radius = 25.02
+radius = 51.0098
 
 [node name="Arbre2" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_8cn5e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
