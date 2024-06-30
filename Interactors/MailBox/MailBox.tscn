@@ -1,19 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://0x6o4cgfakp8"]
 
-[ext_resource type="Texture2D" uid="uid://jr6r8jbf8bq0" path="res://Interactors/MailBox/Mailbox.png" id="1_3gl84"]
 [ext_resource type="Script" path="res://Interactors/MailBox/MailBox.cs" id="1_hlxt7"]
+[ext_resource type="Texture2D" uid="uid://bklo3sduya4x" path="res://Assets/Boitelettre.jpg" id="2_t5w6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xfou"]
-size = Vector2(89, 74)
+size = Vector2(283.333, 286.667)
 
 [node name="MailBox" type="Area2D" groups=["Mailbox"]]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_hlxt7")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.188235, 0.188235, 0.188235, 0.372549)
+position = Vector2(6.66667, 6.66667)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_t5w6e")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.384314, 0.407843, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_3gl84")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_t5w6e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.66667, -3.17891e-06)
 shape = SubResource("RectangleShape2D_7xfou")

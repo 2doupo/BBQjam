@@ -70,8 +70,8 @@ public partial class Level : Node2D, IScene
         if (AvailableBoxes.Contains(box))
         {
             Sprite2D sprite = box.GetNode<Sprite2D>("Sprite2D");
-            sprite.Modulate = new Color(0, 1, 0, 1);
             AvailableBoxes.Remove(box);
+            box.QueueFree();
             currentMailboxScore++;
             gameInterface.SetMailCount(currentMailboxScore, maxMailboxScore);
             if (AvailableBoxes.Count == 0) LevelEnded();
