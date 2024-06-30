@@ -30,10 +30,10 @@ public partial class MainScene : Node
             case 0: LoadLevel(StartInterfacePath); break;
             case 1: LoadLevel(InBetweenInterface); break;
             case 2: LoadLevel(GameOverScene); break;
-            case 3: LoadLevel(Level1Path); break;
+            //case 3: LoadLevel(Level1Path); break;
             case 4: LoadLevel(Level2Path); break;
             case 5: LoadLevel(Level3Path); break;
-            case 6: LoadLevel(Level4Path); break;
+            case 3: LoadLevel(Level4Path); break;
         }
     }
 

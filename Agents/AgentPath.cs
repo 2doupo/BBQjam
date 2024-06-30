@@ -57,7 +57,11 @@ public partial class AgentPath : CharacterBody2D
             NextStepPath();
         }
 
-        if (_navigationAgent.GetCurrentNavigationPath().Length == 0 && !_navigationAgent.IsTargetReachable()) NextStepPath();
+        if (_navigationAgent.GetCurrentNavigationPath().Length == 0 && !_navigationAgent.IsTargetReachable())
+        {
+            NextStepPath();
+        }
+
     }
 
     public void NextStepPath()
