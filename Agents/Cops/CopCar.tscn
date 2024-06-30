@@ -35,6 +35,7 @@ shape = SubResource("CircleShape2D_7du26")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 20.0
 avoidance_enabled = true
+radius = 20.0
 avoidance_layers = 2
 avoidance_mask = 2
 

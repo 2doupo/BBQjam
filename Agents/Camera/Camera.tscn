@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr8ch2jh5cd4c"]
 
 [ext_resource type="Script" path="res://Agents/Camera/CameraAgent.cs" id="1_kh3me"]
-[ext_resource type="Texture2D" uid="uid://cpgx8nvkxi74y" path="res://Agents/Camera/images.png" id="1_o2wfk"]
+[ext_resource type="Texture2D" uid="uid://c71fjv6iigwsi" path="res://Assets/Camera.jpg" id="2_7ruec"]
 [ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_cmhub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbv7m"]
@@ -11,11 +11,12 @@ script = ExtResource("1_kh3me")
 Vision = NodePath("VisionZone")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -1.5708
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_o2wfk")
+rotation = 1.5708
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_7ruec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_cbv7m")
 
 [node name="VisionZone" parent="." instance=ExtResource("3_cmhub")]
+scale = Vector2(3.21618, 3.15021)
