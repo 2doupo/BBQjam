@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddsbidf3m85yg"]
+[gd_scene load_steps=5 format=3 uid="uid://ddsbidf3m85yg"]
 
 [ext_resource type="Script" path="res://Scripts/InGameInterface.cs" id="1_m1itq"]
 [ext_resource type="Texture2D" uid="uid://yynyohmclk25" path="res://Assets/Background_timer.jpg" id="2_r28lb"]
 [ext_resource type="Texture2D" uid="uid://t17pt1fc8jew" path="res://Assets/Foreground_timer.jpg" id="3_gps28"]
+[ext_resource type="PackedScene" uid="uid://cy74wj5tnycf8" path="res://Interfaces/mail_box_compteur.tscn" id="4_288co"]
 
 [node name="InGameInterface" type="Control" groups=["Interface"]]
 layout_mode = 3
@@ -31,9 +32,6 @@ texture_under = ExtResource("2_r28lb")
 texture_progress = ExtResource("3_gps28")
 texture_progress_offset = Vector2(170, 160)
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 132.0
-offset_bottom = 68.0
-theme_override_font_sizes/font_size = 100
-text = "X / Y"
+[node name="MailBoxCompteur" parent="." instance=ExtResource("4_288co")]
+layout_mode = 1
+scale = Vector2(3, 3)
