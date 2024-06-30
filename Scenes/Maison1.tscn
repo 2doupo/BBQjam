@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://be3g7y1n0bn2t"]
+
+[ext_resource type="Texture2D" uid="uid://drw73x654gh06" path="res://Assets/Maison_1.png" id="2_tc00v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgr86"]
+size = Vector2(61, 104)
+
+[node name="Maison1" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_tc00v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fgr86")
