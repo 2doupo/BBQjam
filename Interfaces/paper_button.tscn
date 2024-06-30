@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj032aac0b54c"]
+[gd_scene load_steps=4 format=3 uid="uid://bj032aac0b54c"]
 
 [ext_resource type="Texture2D" uid="uid://dh2rg45o5edbb" path="res://Assets/button_base.jpg" id="1_8u7uy"]
 [ext_resource type="Texture2D" uid="uid://salacn6fr4lg" path="res://Assets/button_pressed.jpg" id="2_yt52w"]
 [ext_resource type="Texture2D" uid="uid://d3tqjqnwbojxu" path="res://Assets/button_selected.jpg" id="3_di5jf"]
-[ext_resource type="Texture2D" uid="uid://by6ssus7cf5r8" path="res://Assets/Commencer.jpg" id="4_atwbb"]
 
 [node name="TextureButton" type="TextureButton"]
 offset_left = 116.0
@@ -12,13 +11,6 @@ offset_right = 645.0
 offset_bottom = 1453.0
 rotation = 1.5708
 scale = Vector2(0.075, 0.075)
-toggle_mode = true
 texture_normal = ExtResource("1_8u7uy")
 texture_pressed = ExtResource("2_yt52w")
 texture_hover = ExtResource("3_di5jf")
-
-[node name="Commencer" type="Sprite2D" parent="."]
-position = Vector2(253.333, 712.612)
-rotation = -1.5708
-scale = Vector2(0.640796, 0.417504)
-texture = ExtResource("4_atwbb")
