@@ -56,6 +56,16 @@ public partial class player : CharacterBody2D
         boxSprite = GetNode<Sprite2D>("Box");
         Callable.From(ActorSetup).CallDeferred();
 
+        OnGetUnderBox += () =>
+        {
+            MusicManager.instance.StopMusic(MusicManager.Music.MusicMain);
+            MusicManager.instance.PlayMusic(MusicManager.Music.MusicHidden);
+        };
+        OnGetOutOffBox += () =>
+        {
+            MusicManager.instance.StopMusic(MusicManager.Music.MusicHidden);
+            MusicManager.instance.PlayMusic(MusicManager.Music.MusicMain);
+        };
     }
     public override void _PhysicsProcess(double delta)
     {

@@ -6,8 +6,7 @@ public partial class InterfaceInbetween : Control, IScene
 
     public void SetMainScene(MainScene scene, int currentLevel)
     {
-        Button startButton = GetNode<Button>("Button");
-        startButton.Text = "Start Level: " + currentLevel;
+        TextureButton startButton = GetNode<TextureButton>("TextureButton");
         startButton.Pressed += () => scene.OpenNextLevel();
     }
 }

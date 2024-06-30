@@ -4,9 +4,10 @@ using System;
 public partial class MusicManager : Node
 {
 
-    public enum Music { MusicMain }
+    public enum Music { MusicMain, MusicHidden }
 
     public const string musicMain = "MusicMain";
+    public const string musicHidden = "MusicHidden";
 
     public static MusicManager instance;
 
@@ -23,6 +24,8 @@ public partial class MusicManager : Node
         {
             case Music.MusicMain:
                 return GetNode<AudioStreamPlayer>(musicMain);
+            case Music.MusicHidden:
+                return GetNode<AudioStreamPlayer>(musicHidden);
         }
         return null;
     }

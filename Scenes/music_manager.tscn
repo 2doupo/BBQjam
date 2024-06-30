@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7otxiea10vwm"]
+[gd_scene load_steps=4 format=3 uid="uid://c7otxiea10vwm"]
 
 [ext_resource type="Script" path="res://Scripts/MusicManager.cs" id="1_eqjqk"]
 [ext_resource type="AudioStream" uid="uid://cskr2gya1515f" path="res://Musics/MusicMain.wav" id="2_xybnx"]
+[ext_resource type="AudioStream" uid="uid://baulo4hqv63g3" path="res://Musics/MusicHidded.wav" id="3_44ul0"]
 
 [node name="MusicManager" type="Node2D"]
 script = ExtResource("1_eqjqk")
 
 [node name="MusicMain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xybnx")
+
+[node name="MusicHidden" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_44ul0")

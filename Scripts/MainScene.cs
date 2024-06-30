@@ -66,7 +66,7 @@ public partial class MainScene : Node
         currentScore += score;
         currentLevel++;
         LoadLevel(1);
-        if (currentLevel == lastLevel) GD.Print("last level");
+        if (currentLevel == lastLevel) LoadLevel(2);
     }
 
     public void GameOver(int score)
@@ -79,6 +79,11 @@ public partial class MainScene : Node
     {
         currentScore = 0;
         LoadLevel(0);
+    }
+
+    public float GetProgress()
+    {
+        return currentLevel / ((float)lastLevel * 1.8f);
     }
 
 }
