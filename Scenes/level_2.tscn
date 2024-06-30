@@ -22,7 +22,7 @@ position = Vector2(290, 152)
 position = Vector2(417, 101)
 
 [node name="Arbre2" parent="." instance=ExtResource("2_hpgnl")]
-position = Vector2(284, 320)
+position = Vector2(190, 341)
 
 [node name="Arbre3" parent="." instance=ExtResource("4_8xww1")]
 position = Vector2(586, 96)
