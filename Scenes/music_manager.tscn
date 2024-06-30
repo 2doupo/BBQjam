@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7otxiea10vwm"]
+[gd_scene load_steps=8 format=3 uid="uid://c7otxiea10vwm"]
 
 [ext_resource type="Script" path="res://Scripts/MusicManager.cs" id="1_eqjqk"]
 [ext_resource type="AudioStream" uid="uid://cskr2gya1515f" path="res://Musics/MusicMain.wav" id="2_xybnx"]
 [ext_resource type="AudioStream" uid="uid://baulo4hqv63g3" path="res://Musics/MusicHidded.wav" id="3_44ul0"]
+[ext_resource type="AudioStream" uid="uid://gwru2rt8t32f" path="res://Musics/SndSpotted.wav" id="4_80xow"]
+[ext_resource type="AudioStream" uid="uid://dfpmfo55n32nn" path="res://Musics/MusicMenus.wav" id="5_jh2nd"]
+[ext_resource type="AudioStream" uid="uid://4k2ju2lhw8m3" path="res://Musics/SndDog.wav" id="6_ljqco"]
+[ext_resource type="AudioStream" uid="uid://irx8ivmveftk" path="res://Musics/Snd Livraison.wav" id="7_dw18y"]
 
 [node name="MusicManager" type="Node2D"]
 script = ExtResource("1_eqjqk")
@@ -12,3 +16,15 @@ stream = ExtResource("2_xybnx")
 
 [node name="MusicHidden" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_44ul0")
+
+[node name="SoundSpotted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_80xow")
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jh2nd")
+
+[node name="DogBark" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ljqco")
+
+[node name="SoundPost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dw18y")

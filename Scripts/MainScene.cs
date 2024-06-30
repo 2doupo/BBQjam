@@ -54,6 +54,10 @@ public partial class MainScene : Node
         {
             MusicManager.instance.PlayMusic(MusicManager.Music.MusicMain);
         }
+        else
+        {
+            MusicManager.instance.PlayMusic(MusicManager.Music.MusicMain);
+        }
     }
 
     public void OpenNextLevel()

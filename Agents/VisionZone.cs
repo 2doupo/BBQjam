@@ -51,7 +51,12 @@ public partial class VisionZone : Area2D
             bool previousValue = isPlayerSpoted;
             isPlayerSpoted = value;
             visionVisual.Color = value ? AlertedColor : neutralColor;
-            if (!previousValue && value) EmitSignal(SignalName.OnPlayerSeen, _player.Transform.Origin);
+            if (!previousValue && value)
+            {
+                EmitSignal(SignalName.OnPlayerSeen, _player.Transform.Origin);
+                MusicManager.instance.PlayMusic(MusicManager.Music.SoundSpotted);
+            }
+
             if (previousValue && !value) EmitSignal(SignalName.OnPlayerLost, _player.Transform.Origin);
         }
     }

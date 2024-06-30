@@ -166,5 +166,6 @@ public partial class Dog : AgentPath
     {
         ChangeState(DogState.Tracking);
         OverwriteTarget(position, 75);
+        MusicManager.instance.PlayMusic(MusicManager.Music.SoundDog);
     }
 }

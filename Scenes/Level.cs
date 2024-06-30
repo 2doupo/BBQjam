@@ -74,6 +74,7 @@ public partial class Level : Node2D, IScene
             box.QueueFree();
             currentMailboxScore++;
             gameInterface.SetMailCount(currentMailboxScore, maxMailboxScore);
+            MusicManager.instance.PlayMusic(MusicManager.Music.SoundPost);
             if (AvailableBoxes.Count == 0) LevelEnded();
         }
     }
