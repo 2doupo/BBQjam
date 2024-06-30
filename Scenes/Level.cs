@@ -26,7 +26,10 @@ public partial class Level : Node2D, IScene
         {
             (item as CameraAgent).OnCameraSeePlayer += CallAllAgentsTo;
         }
-        (GetTree().GetFirstNodeInGroup("Player") as player).OnPlayerCaught += GameOver;
+        player Player = GetTree().GetFirstNodeInGroup("Player") as player;
+        (Player).OnPlayerCaught += GameOver;
+
+        GetNode<CameraManager>("Camera2D").Player = Player;
     }
 
 

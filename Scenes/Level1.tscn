@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://g1wdqfgv7tgx"]
+[gd_scene load_steps=12 format=3 uid="uid://g1wdqfgv7tgx"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_vo8kc"]
 [ext_resource type="PackedScene" uid="uid://exj1va2atkt8" path="res://Scenes/navigation_region_2d.tscn" id="2_qpfl3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://rsimo1wl627a" path="res://Interactors/Box/Box.tscn" id="6_j5lwt"]
 [ext_resource type="PackedScene" uid="uid://dtja2hqy4c8eo" path="res://Agents/Dog/Dog.tscn" id="7_n3e75"]
 [ext_resource type="PackedScene" uid="uid://cr8ch2jh5cd4c" path="res://Agents/Camera/Camera.tscn" id="8_iesxl"]
+[ext_resource type="Script" path="res://Scripts/CameraManager.cs" id="9_6ixko"]
 
 [sub_resource type="Curve2D" id="Curve2D_tcwau"]
 _data = {
@@ -37,16 +38,6 @@ position = Vector2(426, 51)
 [node name="Player" parent="." instance=ExtResource("5_hv8bu")]
 position = Vector2(818, 290)
 
-[node name="Dog" type="Node2D" parent="."]
-
-[node name="Dog" parent="Dog" node_paths=PackedStringArray("path") instance=ExtResource("7_n3e75")]
-position = Vector2(996, 287)
-path = NodePath("../Path2D")
-Speed = 80.0
-
-[node name="Path2D" type="Path2D" parent="Dog"]
-curve = SubResource("Curve2D_tcwau")
-
 [node name="Boxes" type="Node2D" parent="."]
 
 [node name="Box" parent="Boxes" instance=ExtResource("6_j5lwt")]
@@ -55,17 +46,33 @@ position = Vector2(812, 467)
 [node name="Box2" parent="Boxes" instance=ExtResource("6_j5lwt")]
 position = Vector2(167, 556)
 
-[node name="Cop" type="Node2D" parent="."]
+[node name="Agents" type="Node2D" parent="."]
 
-[node name="CopCar" parent="Cop" node_paths=PackedStringArray("path") instance=ExtResource("4_o468e")]
+[node name="Dog" type="Node2D" parent="Agents"]
+
+[node name="Dog" parent="Agents/Dog" node_paths=PackedStringArray("path") instance=ExtResource("7_n3e75")]
+position = Vector2(996, 287)
+path = NodePath("../Path2D")
+Speed = 80.0
+
+[node name="Path2D" type="Path2D" parent="Agents/Dog"]
+curve = SubResource("Curve2D_tcwau")
+
+[node name="Cop" type="Node2D" parent="Agents"]
+
+[node name="CopCar" parent="Agents/Cop" node_paths=PackedStringArray("path") instance=ExtResource("4_o468e")]
 position = Vector2(572, 69)
 path = NodePath("../CopPath")
 
-[node name="CopPath" type="Path2D" parent="Cop"]
+[node name="CopPath" type="Path2D" parent="Agents/Cop"]
 curve = SubResource("Curve2D_yw5c8")
 
-[node name="Camera" parent="." instance=ExtResource("8_iesxl")]
+[node name="Camera" parent="Agents" instance=ExtResource("8_iesxl")]
 position = Vector2(730, 142)
 rotation = 2.62979
 RotationMin = -25.0
 RotationMax = 25.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("9_6ixko")

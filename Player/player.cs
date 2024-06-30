@@ -3,6 +3,12 @@ using System;
 
 public partial class player : CharacterBody2D
 {
+
+    [Signal]
+    public delegate void OnGetUnderBoxEventHandler();
+    [Signal]
+    public delegate void OnGetOutOffBoxEventHandler();
+
     public enum State { Free, InTheBox }
     private State _currentState = State.Free;
     public State currentState
