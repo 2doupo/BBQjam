@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctuccbgbax5lq"]
 
 [ext_resource type="Script" path="res://Agents/Cops/CopCar.cs" id="1_jcspy"]
-[ext_resource type="Texture2D" uid="uid://dsqe0msu71tn" path="res://Assets/police.jpg" id="2_w4mxv"]
+[ext_resource type="Texture2D" uid="uid://drrmqdw45ndjf" path="res://Assets/police.jpg" id="2_w4mxv"]
 [ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_hulip"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7du26"]
-radius = 57.0022
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5776"]
 size = Vector2(44, 97)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pj4n8"]
+radius = 27.0
 
 [node name="CopCar" type="CharacterBody2D" node_paths=PackedStringArray("visionZone") groups=["Agent", "Cop"]]
 script = ExtResource("1_jcspy")
@@ -28,15 +28,13 @@ texture = ExtResource("2_w4mxv")
 region_enabled = true
 region_rect = Rect2(144.052, 419.505, 1124.06, 994.945)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0.5)
-shape = SubResource("CircleShape2D_7du26")
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 20.0
+navigation_layers = 3
 avoidance_enabled = true
-avoidance_layers = 2
-avoidance_mask = 2
+avoidance_layers = 3
+avoidance_mask = 3
+debug_enabled = true
 
 [node name="Catch" type="Area2D" parent="."]
 
@@ -47,3 +45,7 @@ shape = SubResource("RectangleShape2D_w5776")
 [node name="VisionZone" parent="." instance=ExtResource("3_hulip")]
 position = Vector2(-33, 2)
 scale = Vector2(1.76282, 3.0865)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(23, 1)
+shape = SubResource("CircleShape2D_pj4n8")

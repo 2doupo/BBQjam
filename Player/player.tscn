@@ -14,12 +14,6 @@ script = ExtResource("1_l00ly")
 avoidance_enabled = true
 radius = 20.0
 
-[node name="Box" type="Sprite2D" parent="."]
-visible = false
-rotation = -0.483456
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_kixmv")
-
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprites"]
@@ -35,6 +29,12 @@ scale = Vector2(0.11, 0.11)
 texture = ExtResource("2_ttl4l")
 region_enabled = true
 region_rect = Rect2(283.39, 400.17, 903.806, 808.865)
+
+[node name="Box" type="Sprite2D" parent="."]
+visible = false
+rotation = -0.483456
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_kixmv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)

@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Agents/VisionZone.cs" id="1_ulbev"]
 
 [node name="VisionZone" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_ulbev")
 neutralColor = Color(0.329412, 1, 0.329412, 0.580392)
 AlertedColor = Color(0.835294, 0, 0.101961, 0.580392)

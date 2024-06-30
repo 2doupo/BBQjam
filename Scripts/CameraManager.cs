@@ -7,9 +7,9 @@ public partial class CameraManager : Camera2D
     public player Player;
 
     private bool isShacking;
-    private const float minShack = -5;
-    public const float maxShack = 5;
-    public const float shackSpeed = 0.5f;
+    private const float minShack = -3;
+    public const float maxShack = 3;
+    public const float shackSpeed = 0.7f;
     private double timer;
     private bool up;
 

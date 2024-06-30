@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ol1rs6vhjgtv"]
+[gd_scene load_steps=17 format=3 uid="uid://ol1rs6vhjgtv"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_vspvp"]
 [ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="2_37rg3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bvqcf2tsy06ji" path="res://Scenes/Maison3.tscn" id="8_c4trc"]
 [ext_resource type="PackedScene" uid="uid://3d40cm0v0b3t" path="res://Player/player.tscn" id="9_vbo7x"]
 [ext_resource type="PackedScene" uid="uid://0x6o4cgfakp8" path="res://Interactors/MailBox/MailBox.tscn" id="10_5pu0m"]
+[ext_resource type="PackedScene" uid="uid://rsimo1wl627a" path="res://Interactors/Box/Box.tscn" id="12_b6x1w"]
 [ext_resource type="PackedScene" uid="uid://dtja2hqy4c8eo" path="res://Agents/Dog/Dog.tscn" id="12_wkhpx"]
 [ext_resource type="PackedScene" uid="uid://chm8h12dnda8a" path="res://Player/PlayerCamera.tscn" id="12_y8qrg"]
 [ext_resource type="PackedScene" uid="uid://ddsbidf3m85yg" path="res://Scenes/in_game_interface.tscn" id="13_xp3o6"]
@@ -158,6 +159,12 @@ path = NodePath("../Path2D2")
 
 [node name="Path2D2" type="Path2D" parent="Cops"]
 curve = SubResource("Curve2D_lvdj6")
+
+[node name="Node2D" parent="Cops" instance=ExtResource("12_b6x1w")]
+position = Vector2(506, 605)
+
+[node name="Node2D2" parent="Cops" instance=ExtResource("12_b6x1w")]
+position = Vector2(776, 36)
 
 [node name="Camera2D" parent="." instance=ExtResource("12_y8qrg")]
 

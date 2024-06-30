@@ -32,7 +32,7 @@ public partial class CopCar : AgentPath
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        if (seesPlayer) OverwriteTarget(visionZone.GetPlayerPosition(), 80);
+        if (seesPlayer) OverwriteTarget(visionZone.GetPlayerPosition(), 100);
     }
 
     public void OnBodyEntered(Node node)

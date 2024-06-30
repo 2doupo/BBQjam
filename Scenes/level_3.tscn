@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ctekxub2ajy2y"]
+[gd_scene load_steps=17 format=3 uid="uid://ctekxub2ajy2y"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_032mf"]
 [ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="2_j778u"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://0x6o4cgfakp8" path="res://Interactors/MailBox/MailBox.tscn" id="10_7v4o1"]
 [ext_resource type="PackedScene" uid="uid://chm8h12dnda8a" path="res://Player/PlayerCamera.tscn" id="11_h4jh0"]
 [ext_resource type="PackedScene" uid="uid://ddsbidf3m85yg" path="res://Scenes/in_game_interface.tscn" id="12_ga1af"]
+[ext_resource type="PackedScene" uid="uid://rsimo1wl627a" path="res://Interactors/Box/Box.tscn" id="12_t3uae"]
 [ext_resource type="PackedScene" uid="uid://ctuccbgbax5lq" path="res://Agents/Cops/CopCar.tscn" id="13_oo2ec"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wihm0"]
@@ -146,6 +147,9 @@ path = NodePath("../Path2D")
 
 [node name="Path2D" type="Path2D" parent="Cops"]
 curve = SubResource("Curve2D_ebyxm")
+
+[node name="Node2D" parent="Cops" instance=ExtResource("12_t3uae")]
+position = Vector2(463, 358)
 
 [node name="Camera2D" parent="." instance=ExtResource("11_h4jh0")]
 
