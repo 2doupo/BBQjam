@@ -134,12 +134,12 @@ position = Vector2(955, 335)
 
 [node name="Camera2D" parent="." instance=ExtResource("11_fkppx")]
 
-[node name="InGameInterface" parent="Camera2D" instance=ExtResource("12_ilatf")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InGameInterface" parent="CanvasLayer" instance=ExtResource("12_ilatf")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
