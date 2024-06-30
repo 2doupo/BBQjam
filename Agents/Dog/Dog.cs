@@ -80,7 +80,7 @@ public partial class Dog : AgentPath
     public void ChangeState(DogState newState)
     {
         ExitState(currentState);
-        GD.Print("went from " + currentState + " to " + newState);
+        //GD.Print("went from " + currentState + " to " + newState);
         currentState = newState;
         EnterState(currentState);
     }

@@ -31,7 +31,7 @@ public partial class player : CharacterBody2D
     public const double BoxDuration = 4f;
     private double boxTimer;
 
-    private NavigationAgent2D _navigationAgent;
+    //private NavigationAgent2D _navigationAgent;
     private bool isInit = false;
 
     private Sprite2D boxSprite;
@@ -41,9 +41,9 @@ public partial class player : CharacterBody2D
 
     public override void _Ready()
     {
-        _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
-        _navigationAgent.AvoidanceEnabled = true;
-        _navigationAgent.VelocityComputed += VelocityComputed;
+        //_navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+        //_navigationAgent.AvoidanceEnabled = true;
+        //_navigationAgent.VelocityComputed += VelocityComputed;
         boxSprite = GetNode<Sprite2D>("Box");
         Callable.From(ActorSetup).CallDeferred();
 
@@ -76,16 +76,16 @@ public partial class player : CharacterBody2D
         {
             Direction += new Vector2(1, 0);
         }
-        Direction = Direction.Normalized() * CurrentSpeed;
-        _navigationAgent.TargetPosition = Transform.Origin + Direction;
-        _navigationAgent.Velocity = GlobalTransform.Origin.DirectionTo(_navigationAgent.GetNextPathPosition()) * CurrentSpeed;
+        Velocity = Direction.Normalized() * CurrentSpeed;
+        //_navigationAgent.TargetPosition = Transform.Origin + Direction;
+        //_navigationAgent.Velocity = GlobalTransform.Origin.DirectionTo(_navigationAgent.GetNextPathPosition()) * CurrentSpeed;
 
+        MoveAndSlide();
     }
 
     private void VelocityComputed(Vector2 safeVelocity)
     {
         this.Velocity = safeVelocity;
-        MoveAndSlide();
     }
 
     private async void ActorSetup()
