@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy74wj5tnycf8"]
+
+[ext_resource type="Script" path="res://Interfaces/mail_box_compteur.gd" id="1_li618"]
+[ext_resource type="PackedScene" uid="uid://2s2pldxdx68u" path="res://Interfaces/image_number.tscn" id="2_kbmfj"]
+
+[node name="MailBoxCompteur" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_li618")
+
+[node name="Shadow" parent="." instance=ExtResource("2_kbmfj")]
+modulate = Color(0, 0, 0, 0.678431)
+position = Vector2(73.25, 19.25)
+scale = Vector2(0.447279, 0.0734375)
+frame = 11
+
+[node name="DizaineAct" parent="." instance=ExtResource("2_kbmfj")]
+position = Vector2(17.025, 18)
+
+[node name="DecimalAct" parent="." instance=ExtResource("2_kbmfj")]
+position = Vector2(39.025, 18)
+
+[node name="Slash" parent="." instance=ExtResource("2_kbmfj")]
+position = Vector2(61.05, 18)
+frame = 10
+
+[node name="DizaineMax" parent="." instance=ExtResource("2_kbmfj")]
+position = Vector2(83.05, 18)
+frame = 9
+
+[node name="DecimalMax" parent="." instance=ExtResource("2_kbmfj")]
+position = Vector2(105.05, 18)
+frame = 9
+
+[node name="Mail" parent="." instance=ExtResource("2_kbmfj")]
+position = Vector2(127.05, 18)
+frame = 11
