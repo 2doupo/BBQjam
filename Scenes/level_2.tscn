@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://1uqg7j45s7u"]
+
+[ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="1_pah2t"]
+[ext_resource type="PackedScene" uid="uid://bvqcf2tsy06ji" path="res://Scenes/Maison3.tscn" id="2_4h86o"]
+[ext_resource type="PackedScene" uid="uid://c1tdg1qitw3eg" path="res://Scenes/Arbre1.tscn" id="2_hpgnl"]
+[ext_resource type="PackedScene" uid="uid://hbdq1ba3g2ns" path="res://Scenes/Arbre4.tscn" id="3_dy18g"]
+[ext_resource type="PackedScene" uid="uid://cc3nrl77j8y7g" path="res://Scenes/Arbre2.tscn" id="4_8xww1"]
+[ext_resource type="PackedScene" uid="uid://fucmomxrbcfm" path="res://Scenes/Maison2.tscn" id="5_3aqmi"]
+[ext_resource type="PackedScene" uid="uid://be3g7y1n0bn2t" path="res://Scenes/Maison1.tscn" id="5_x1ae5"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 254)
+scale = Vector2(0.290719, 0.290719)
+texture = ExtResource("1_pah2t")
+
+[node name="Arbre1" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(290, 152)
+
+[node name="Arbre4" parent="." instance=ExtResource("3_dy18g")]
+position = Vector2(417, 101)
+
+[node name="Arbre2" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(284, 320)
+
+[node name="Arbre3" parent="." instance=ExtResource("4_8xww1")]
+position = Vector2(586, 96)
+
+[node name="Maison2" parent="." instance=ExtResource("5_3aqmi")]
+position = Vector2(322, 71)
+rotation = -0.512778
+
+[node name="Maison1" parent="." instance=ExtResource("5_x1ae5")]
+position = Vector2(141, 266)
+rotation = -0.512778
+
+[node name="Maison3" parent="." instance=ExtResource("5_3aqmi")]
+position = Vector2(149, 418)
+rotation = -1.13564
+
+[node name="Maison4" parent="." instance=ExtResource("5_x1ae5")]
+position = Vector2(513, 68)
+rotation = 0.889374
+
+[node name="Maison5" parent="." instance=ExtResource("2_4h86o")]
+position = Vector2(210, 173)
+
+[node name="Arbre9" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(653, 522)
+
+[node name="Arbre10" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(650, 156)
+rotation = 0.267204
+
+[node name="Arbre11" parent="." instance=ExtResource("3_dy18g")]
+position = Vector2(777, 105)
+rotation = 0.267204
+
+[node name="Arbre12" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(286, 233)
+rotation = 0.267204
+
+[node name="Arbre13" parent="." instance=ExtResource("4_8xww1")]
+position = Vector2(957, 130)
+rotation = 0.267204
+
+[node name="Maison11" parent="." instance=ExtResource("5_3aqmi")]
+position = Vector2(739, 180)
+rotation = -0.245573
+
+[node name="Maison12" parent="." instance=ExtResource("5_x1ae5")]
+position = Vector2(1017, 502)
+rotation = -0.245573
+
+[node name="Maison13" parent="." instance=ExtResource("5_3aqmi")]
+position = Vector2(1104, 423)
+rotation = -0.868432
+
+[node name="Maison14" parent="." instance=ExtResource("5_x1ae5")]
+position = Vector2(885, 90)
+rotation = 1.15658
+
+[node name="Maison15" parent="." instance=ExtResource("2_4h86o")]
+position = Vector2(1001, 52)
+rotation = 0.267204
+
+[node name="Arbre14" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(779, 594)
+rotation = 0.267204
+
+[node name="Arbre5" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(501, 571)
+
+[node name="Arbre6" parent="." instance=ExtResource("3_dy18g")]
+position = Vector2(253, 569)
+
+[node name="Arbre7" parent="." instance=ExtResource("2_hpgnl")]
+position = Vector2(201, 540)
+
+[node name="Arbre8" parent="." instance=ExtResource("4_8xww1")]
+position = Vector2(185, 486)
+
+[node name="Maison6" parent="." instance=ExtResource("5_3aqmi")]
+position = Vector2(722, 556)
+rotation = -0.512778
+
+[node name="Maison7" parent="." instance=ExtResource("5_x1ae5")]
+position = Vector2(340, 586)
+rotation = 1.49409
+
+[node name="Maison8" parent="." instance=ExtResource("5_3aqmi")]
+position = Vector2(590, 575)
+rotation = -0.097201
+
+[node name="Maison9" parent="." instance=ExtResource("5_x1ae5")]
+position = Vector2(902, 552)
+rotation = 0.889374
+
+[node name="Maison10" parent="." instance=ExtResource("2_4h86o")]
+position = Vector2(432, 580)
