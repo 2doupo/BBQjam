@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsqe0msu71tn"
-path="res://.godot/imported/Police.jpg-be74b962cc822ad14803eec0405cb621.ctex"
+uid="uid://3u2pmicywah0"
+path="res://.godot/imported/Ouafe.jpg-ee7fd1fb761a0d4636244b7c9c54b5d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Police.jpg"
-dest_files=["res://.godot/imported/Police.jpg-be74b962cc822ad14803eec0405cb621.ctex"]
+source_file="res://Assets/Ouafe.jpg"
+dest_files=["res://.godot/imported/Ouafe.jpg-ee7fd1fb761a0d4636244b7c9c54b5d0.ctex"]
 
 [params]
 

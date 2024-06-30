@@ -129,5 +129,11 @@ public partial class player : CharacterBody2D
         currentState = State.InTheBox;
     }
 
+    public void ResetPosition(Vector2 position)
+    {
+        Position = position;
+        Velocity = Vector2.Zero;
+    }
+
 
 }

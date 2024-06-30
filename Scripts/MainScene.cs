@@ -10,7 +10,9 @@ public partial class MainScene : Node
     public const string Level1Path = "res://Scenes/level_2.tscn";
 
     private int currentLevel = 1;
+    private int currentScore = 0;
 
+    private int lastLevel = 2;
     public override void _Ready()
     {
         base._Ready();
@@ -48,15 +50,24 @@ public partial class MainScene : Node
         LoadLevel(currentLevel + 2);
     }
 
-    public void FinishLevel()
+    public void FinishLevel(int score)
     {
+        currentScore += score;
         currentLevel++;
         LoadLevel(1);
+        if (currentLevel == lastLevel) GD.Print("last level");
     }
 
-    public void GameOver()
+    public void GameOver(int score)
     {
+        currentScore += score;
         LoadLevel(2);
+    }
+
+    public void Restart()
+    {
+        currentScore = 0;
+        LoadLevel(0);
     }
 
 }

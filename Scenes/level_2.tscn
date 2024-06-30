@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1uqg7j45s7u"]
+[gd_scene load_steps=14 format=3 uid="uid://1uqg7j45s7u"]
 
 [ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="1_pah2t"]
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_pjppk"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://3d40cm0v0b3t" path="res://Player/player.tscn" id="9_10oee"]
 [ext_resource type="PackedScene" uid="uid://0x6o4cgfakp8" path="res://Interactors/MailBox/MailBox.tscn" id="10_p5to3"]
 [ext_resource type="PackedScene" uid="uid://chm8h12dnda8a" path="res://Player/PlayerCamera.tscn" id="11_fkppx"]
+[ext_resource type="PackedScene" uid="uid://ddsbidf3m85yg" path="res://Scenes/in_game_interface.tscn" id="12_ilatf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_wihm0"]
 vertices = PackedVector2Array(1361, -327, 1410, 880, 1370, -95, 1191, 774, 1227, 760, 1380, 721, 1181, 810, -218, 124, -208, -253, -208, -95, 75, 34, 85, -2, 266, -10, 305, -10, 165, 17, 1348, 37, 1299, 398, 1338, 73, -160, 451, -232, 608, -219, 151, -166, 246, 592, -58, 574, -53, 711, -164, 1338, 1, 1292, -282, 1187, -236, 1191, -241, -128, 224, -49, 364, -57, 359, 375, 632, 383, 601, 498, 586, 530, 605, 383, 644, 625, -276, 764, -165, 732, -146, 621, -273, 621, 516, 787, 451, 814, 486, 655, 616, 620, 554, 1118, 701, 1082, 711, 1070, 688, 1134, 571, 234, -29, 1001, -106, 1065, 39, 985, -12, 982, -33, 452, 46, 538, -24, 531, 3, 1311, 100, 898, -112, 880, -98, 854, -113, 834, -145, 955, -92, 356, -61, 356, -70, 254, 121, 256, 99, 1212, 73, 1239, 100, 1162, 428, 1102, 443, 510, -206, 356, -81, 357, -99, 348, -210, 483, -242, 337, -131, 1174, -214, 1176, -218, 1189, -188, 623, -50, 712, -114, 970, 603, 1015, 529, -176, 100, -79, 358, 652, 723, 601, 586, 688, 713, 853, -75, 872, -77, 1311, -26, 305, -151, -241, 894, -235, 699, -149, 740, -11, 892, -22, 751, 479, 554, 375, 570, 1191, -273, 903, 884, 1055, 738, 1045, 774, 1055, 810, 215, -61, 75, -38, 1275, 110, 1163, 432, 337, -29, 102, 628, 261, 601, 269, 632, 92, 664, 539, 34, 1202, 37, 248, 80, 592, 64, 925, 419, 929, 417, 977, 9, 4, 421, -16, 397, 112, 326, -100, 367, -112, 386, -114, 408, -106, 427, -41, 506, -63, 476, -45, 489, -23, 490, 1147, -198, 1115, -198, 941, -109, 1088, -214, 1181, 738, 1176, 560, 1154, 711, 756, 739, 803, 800, 761, 786, 751, 750, 724, 723, 323, 884, 312, 744, 317, 744, 383, 870, 712, -75, 645, -28, 731, -43, 653, 3, 751, 822, 1313, -223, 1318, -225, 7, -321, -206, -321, -204, -382, 1034, -338, 283, -325, 180, 692, 183, 734, 29, 701, 875, -56, 834, -43, -51, 34, -52, 35, -174, 103, -61, -2, 92, 592, 269, 570, 904, 3, 802, -24, 479, 515, 353, 548, 215, -100, 48, -65, 122, -84, 601, 484, 242, 140, 889, 369, 585, -324, 12, 440, 1082, 837, 1275, -36, 1175, -300, 724, 849, 625, 750, 598, 644, 1154, 837, 763, -24, 645, 34, 960, 23, 291, 654, 65, 691, 267, -151, 235, -132, 58, -198, 12, -75, 7, -95, 1075, -215, 919, -116, 825, -152, 561, 56, 221, 149, 291, 548, 65, 565, 199, 148, 499, 483, 322, 540, 569, 464, 531, 464, 29, 555, 1148, -316, 1043, -338, 1115, -317, 1089, -300, 1072, -274, 793, -278, 802, -165, 917, 19, 623, 56, 10, 462, 1118, 847, 688, 859, 598, 870, 652, 849, 625, 822, 615, 786, 569, 605, 353, 654, 322, 662, 311, 681, 938, 27, 1072, -241, -2, 481, -34, 592, 1239, -26, 1212, 1, 238, 890, -7, 691, -34, 664, -44, 628, -7, 565, 181, 135, 138, 86, 48, 61, 130, 67, 12, 71, 205, 31, 187, 18, 144, 26, 132, 45, -24, 61, -51, -38, -24, -65)
@@ -69,22 +70,18 @@ position = Vector2(1115, 774)
 [node name="Arbre10" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
 position = Vector2(780, -95)
 rotation = 0.267204
-scale = Vector2(1, 1)
 
 [node name="Arbre11" parent="NavigationRegion2D/Items" instance=ExtResource("3_dy18g")]
 position = Vector2(931, -49)
 rotation = 0.267204
-scale = Vector2(1, 1)
 
 [node name="Arbre12" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
 position = Vector2(283, -81)
 rotation = 0.267204
-scale = Vector2(1, 1)
 
 [node name="Arbre13" parent="NavigationRegion2D/Items" instance=ExtResource("4_8xww1")]
 position = Vector2(1133, -263)
 rotation = 0.267204
-scale = Vector2(1, 1)
 
 [node name="Maison11" parent="NavigationRegion2D/Items" instance=ExtResource("5_3aqmi")]
 position = Vector2(934, -246)
@@ -101,12 +98,10 @@ rotation = -0.868432
 [node name="Maison14" parent="NavigationRegion2D/Items" instance=ExtResource("5_x1ae5")]
 position = Vector2(1181, -121)
 rotation = 1.15658
-scale = Vector2(1, 1)
 
 [node name="Arbre14" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
 position = Vector2(547, 534)
 rotation = 0.267204
-scale = Vector2(1, 1)
 
 [node name="Arbre5" parent="NavigationRegion2D/Items" instance=ExtResource("2_hpgnl")]
 position = Vector2(685, 786)
@@ -138,3 +133,14 @@ position = Vector2(291, 341)
 position = Vector2(955, 335)
 
 [node name="Camera2D" parent="." instance=ExtResource("11_fkppx")]
+
+[node name="InGameInterface" parent="Camera2D" instance=ExtResource("12_ilatf")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2

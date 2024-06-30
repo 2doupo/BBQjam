@@ -9,13 +9,22 @@ public partial class Level : Node2D, IScene
     private Godot.Collections.Array<Node> CopCars;
     private Godot.Collections.Array<Node> Cameras;
     private int currentMailboxScore;
+    private int maxMailboxScore;
     private MainScene mainScene;
     private int currentLevel;
+
+    public float LevelTime = 100;
+    private float currentTime;
+
+    public InGameInterface gameInterface;
+
+    private player _player;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         Godot.Collections.Array<Node> mailboxes = GetTree().GetNodesInGroup("Mailbox");
+        maxMailboxScore = mailboxes.Count;
         foreach (Node item in mailboxes)
         {
             RegisterMailbox(item as MailBox);
@@ -26,10 +35,23 @@ public partial class Level : Node2D, IScene
         {
             (item as CameraAgent).OnCameraSeePlayer += CallAllAgentsTo;
         }
-        player Player = GetTree().GetFirstNodeInGroup("Player") as player;
-        (Player).OnPlayerCaught += GameOver;
+        _player = GetTree().GetFirstNodeInGroup("Player") as player;
+        (_player).OnPlayerCaught += PlayerCaught;
 
-        GetNode<CameraManager>("Camera2D").SetPlayer(Player);
+        GetNode<CameraManager>("Camera2D").SetPlayer(_player);
+        gameInterface = GetTree().GetFirstNodeInGroup("Interface") as InGameInterface;
+        gameInterface.SetProgress(0, LevelTime);
+        gameInterface.SetMailCount(currentMailboxScore, maxMailboxScore);
+        currentTime = 0;
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (currentTime > LevelTime) return;
+        currentTime += (float)delta;
+        gameInterface.SetProgress(currentTime, LevelTime);
+        if (currentTime > LevelTime) EndOfTime();
     }
 
 
@@ -48,6 +70,8 @@ public partial class Level : Node2D, IScene
             Sprite2D sprite = box.GetNode<Sprite2D>("Sprite2D");
             sprite.Modulate = new Color(0, 1, 0, 1);
             AvailableBoxes.Remove(box);
+            currentMailboxScore++;
+            gameInterface.SetMailCount(currentMailboxScore, maxMailboxScore);
             if (AvailableBoxes.Count == 0) LevelEnded();
         }
     }
@@ -62,7 +86,7 @@ public partial class Level : Node2D, IScene
 
     public void LevelEnded()
     {
-        mainScene.FinishLevel();
+        mainScene.FinishLevel(currentMailboxScore);
     }
 
     public void SetMainScene(MainScene scene, int currentLevel)
@@ -71,8 +95,13 @@ public partial class Level : Node2D, IScene
         this.currentLevel = currentLevel;
     }
 
-    private void GameOver()
+    private void PlayerCaught()
     {
-        mainScene.GameOver();
+        _player.ResetPosition(_player.Position);
+    }
+
+    private void EndOfTime()
+    {
+        mainScene.GameOver(currentMailboxScore);
     }
 }
