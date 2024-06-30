@@ -81,4 +81,10 @@ public partial class AgentPath : CharacterBody2D
         IsOverwriten = false;
     }
 
+    public void ResetPosition()
+    {
+        Transform = new Transform2D(0, path.Curve.GetPointPosition(currentIndex));
+        _navigationAgent.SetVelocityForced(Vector2.Zero);
+    }
+
 }

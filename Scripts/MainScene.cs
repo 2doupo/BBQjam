@@ -8,11 +8,12 @@ public partial class MainScene : Node
     public const string InBetweenInterface = "res://Scenes/InterfaceInbetween.tscn";
     public const string GameOverScene = "res://Scenes/GameOverScene.tscn";
     public const string Level1Path = "res://Scenes/level_2.tscn";
+    public const string Level2Path = "res://Scenes/level_3.tscn";
 
     private int currentLevel = 1;
     private int currentScore = 0;
 
-    private int lastLevel = 2;
+    private int lastLevel = 3;
     public override void _Ready()
     {
         base._Ready();
@@ -28,6 +29,7 @@ public partial class MainScene : Node
             case 1: LoadLevel(InBetweenInterface); break;
             case 2: LoadLevel(GameOverScene); break;
             case 3: LoadLevel(Level1Path); break;
+            case 4: LoadLevel(Level2Path); break;
         }
     }
 

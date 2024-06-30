@@ -4,23 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://dsqe0msu71tn" path="res://Assets/police.jpg" id="2_w4mxv"]
 [ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_hulip"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_amq7y"]
-size = Vector2(34, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_7du26"]
+radius = 57.0022
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5776"]
-size = Vector2(19, 26)
+size = Vector2(44, 97)
 
 [node name="CopCar" type="CharacterBody2D" node_paths=PackedStringArray("visionZone") groups=["Agent", "Cop"]]
 script = ExtResource("1_jcspy")
 visionZone = NodePath("VisionZone")
 
-[node name="CarSprite" type="Sprite2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.02, 0.02)
+[node name="CarSprite2" type="Sprite2D" parent="."]
+modulate = Color(0.239216, 0.239216, 0.239216, 0.458824)
+position = Vector2(1, 1)
+scale = Vector2(0.11, 0.11)
 texture = ExtResource("2_w4mxv")
+region_enabled = true
+region_rect = Rect2(144.052, 419.505, 1124.06, 994.945)
+
+[node name="CarSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_w4mxv")
+region_enabled = true
+region_rect = Rect2(144.052, 419.505, 1124.06, 994.945)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_amq7y")
+position = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_7du26")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 20.0
@@ -31,8 +41,9 @@ avoidance_mask = 2
 [node name="Catch" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Catch"]
-position = Vector2(-8, 1)
+position = Vector2(-39, 2.5)
 shape = SubResource("RectangleShape2D_w5776")
 
 [node name="VisionZone" parent="." instance=ExtResource("3_hulip")]
-position = Vector2(6, 0)
+position = Vector2(-33, 2)
+scale = Vector2(1.76282, 3.0865)

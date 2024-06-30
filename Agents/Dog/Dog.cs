@@ -74,6 +74,7 @@ public partial class Dog : AgentPath
         if (node is player)
         {
             (node as player).PlayerCaught();
+            ResetPosition();
         }
     }
 

@@ -18,8 +18,9 @@ public partial class Level : Node2D, IScene
 
     public InGameInterface gameInterface;
 
-    private player _player;
 
+    private player _player;
+    private Vector2 playerStartPosition;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -36,6 +37,7 @@ public partial class Level : Node2D, IScene
             (item as CameraAgent).OnCameraSeePlayer += CallAllAgentsTo;
         }
         _player = GetTree().GetFirstNodeInGroup("Player") as player;
+        playerStartPosition = _player.Position;
         (_player).OnPlayerCaught += PlayerCaught;
 
         GetNode<CameraManager>("Camera2D").SetPlayer(_player);
@@ -97,7 +99,7 @@ public partial class Level : Node2D, IScene
 
     private void PlayerCaught()
     {
-        _player.ResetPosition(_player.Position);
+        _player.ResetPosition(playerStartPosition);
     }
 
     private void EndOfTime()
