@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctuccbgbax5lq"]
 
 [ext_resource type="Script" path="res://Agents/Cops/CopCar.cs" id="1_jcspy"]
-[ext_resource type="Texture2D" uid="uid://di4tn3abrpel3" path="res://Assets/police.jpg" id="2_w4mxv"]
+[ext_resource type="Texture2D" uid="uid://dsqe0msu71tn" path="res://Assets/police.jpg" id="2_w4mxv"]
 [ext_resource type="PackedScene" uid="uid://dn1ey1qdighmi" path="res://Agents/VisionZone.tscn" id="3_hulip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amq7y"]

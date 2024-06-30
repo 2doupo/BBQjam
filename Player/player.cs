@@ -17,7 +17,7 @@ public partial class player : CharacterBody2D
         set
         {
             if (_currentState == State.InTheBox && value != State.InTheBox) EmitSignal(SignalName.OnGetOutOffBox);
-
+            if (_currentState != State.InTheBox && value == State.InTheBox) EmitSignal(SignalName.OnGetUnderBox);
             _currentState = value;
             boxSprite.Visible = currentState == State.InTheBox;
         }

@@ -74,5 +74,7 @@ RotationMin = -25.0
 RotationMax = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 script = ExtResource("9_6ixko")
