@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbqi6gdvihyaq"]
+[gd_scene load_steps=7 format=3 uid="uid://bbqi6gdvihyaq"]
 
 [ext_resource type="Texture2D" uid="uid://c6whv2r8xc1vo" path="res://Assets/GameOver.jpg" id="1_4ej3r"]
 [ext_resource type="Script" path="res://Scripts/GameOver.cs" id="1_po58b"]
 [ext_resource type="Texture2D" uid="uid://yynyohmclk25" path="res://Assets/Background_timer.jpg" id="2_6ilmx"]
 [ext_resource type="Texture2D" uid="uid://t17pt1fc8jew" path="res://Assets/Foreground_timer.jpg" id="3_it1m3"]
+[ext_resource type="PackedScene" uid="uid://bj032aac0b54c" path="res://Interfaces/paper_button.tscn" id="5_pkaxp"]
+[ext_resource type="Texture2D" uid="uid://by6ssus7cf5r8" path="res://Assets/Commencer.jpg" id="6_pnlpi"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -33,3 +35,17 @@ value = 50.0
 texture_under = ExtResource("2_6ilmx")
 texture_progress = ExtResource("3_it1m3")
 texture_progress_offset = Vector2(175, 170)
+
+[node name="TextureButton" parent="." instance=ExtResource("5_pkaxp")]
+offset_left = 968.0
+offset_top = 460.0
+offset_right = 1497.0
+offset_bottom = 1902.0
+rotation = 1.43202
+scale = Vector2(0.2, 0.2)
+
+[node name="Commencer" type="Sprite2D" parent="TextureButton"]
+position = Vector2(245.003, 709.389)
+rotation = -1.5708
+scale = Vector2(0.588262, 0.4)
+texture = ExtResource("6_pnlpi")

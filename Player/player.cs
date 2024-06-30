@@ -58,13 +58,13 @@ public partial class player : CharacterBody2D
 
         OnGetUnderBox += () =>
         {
-            MusicManager.instance.StopMusic(MusicManager.Music.MusicMain);
+            MusicManager.instance.MuteMusic(MusicManager.Music.MusicMain);
             MusicManager.instance.PlayMusic(MusicManager.Music.MusicHidden);
         };
         OnGetOutOffBox += () =>
         {
             MusicManager.instance.StopMusic(MusicManager.Music.MusicHidden);
-            MusicManager.instance.PlayMusic(MusicManager.Music.MusicMain);
+            MusicManager.instance.UnMuteMusic(MusicManager.Music.MusicMain);
         };
     }
     public override void _PhysicsProcess(double delta)

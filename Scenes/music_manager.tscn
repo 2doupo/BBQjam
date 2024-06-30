@@ -10,5 +10,5 @@ script = ExtResource("1_eqjqk")
 [node name="MusicMain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xybnx")
 
-[node name="MusicHidden" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicHidden" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_44ul0")

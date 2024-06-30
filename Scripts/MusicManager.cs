@@ -40,6 +40,16 @@ public partial class MusicManager : Node
         GetPlayer(value).Stop();
     }
 
+    public void MuteMusic(Music value)
+    {
+        GetPlayer(value).VolumeDb = -100;
+    }
+
+    public void UnMuteMusic(Music value)
+    {
+        GetPlayer(value).VolumeDb = 0;
+    }
+
     public void StopAllMusics()
     {
         for (int i = 0; i < GetChildCount(); i++)

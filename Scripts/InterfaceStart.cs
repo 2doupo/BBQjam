@@ -9,7 +9,7 @@ public partial class InterfaceStart : Control, IScene
     public void SetMainScene(MainScene scene, int currentLevel)
     {
         mainScene = scene;
-        Button startButton = GetNode<Button>("StartGame");
+        TextureButton startButton = GetNode<TextureButton>("TextureButton");
         startButton.ButtonDown += () => scene.OpenNextLevel();
     }
 

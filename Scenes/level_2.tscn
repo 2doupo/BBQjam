@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://1uqg7j45s7u"]
 
-[ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="1_pah2t"]
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_pjppk"]
 [ext_resource type="PackedScene" uid="uid://bvqcf2tsy06ji" path="res://Scenes/Maison3.tscn" id="2_4h86o"]
+[ext_resource type="Texture2D" uid="uid://bbpwm4tcisapr" path="res://Assets/Fonds.jpg" id="2_55c1i"]
 [ext_resource type="PackedScene" uid="uid://c1tdg1qitw3eg" path="res://Scenes/Arbre1.tscn" id="2_hpgnl"]
 [ext_resource type="PackedScene" uid="uid://hbdq1ba3g2ns" path="res://Scenes/Arbre4.tscn" id="3_dy18g"]
 [ext_resource type="PackedScene" uid="uid://cc3nrl77j8y7g" path="res://Scenes/Arbre2.tscn" id="4_8xww1"]
@@ -23,9 +23,10 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 script = ExtResource("1_pjppk")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(575, 254)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_pah2t")
+position = Vector2(301, 1085)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_55c1i")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_wihm0")

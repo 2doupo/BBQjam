@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://ol1rs6vhjgtv"]
 
 [ext_resource type="Script" path="res://Scenes/Level.cs" id="1_vspvp"]
-[ext_resource type="Texture2D" uid="uid://iprevl61sgjm" path="res://Assets/BackgroundPapier.jpg" id="2_37rg3"]
+[ext_resource type="Texture2D" uid="uid://bbpwm4tcisapr" path="res://Assets/Fonds.jpg" id="2_5yu4i"]
 [ext_resource type="PackedScene" uid="uid://c1tdg1qitw3eg" path="res://Scenes/Arbre1.tscn" id="3_lypia"]
 [ext_resource type="PackedScene" uid="uid://hbdq1ba3g2ns" path="res://Scenes/Arbre4.tscn" id="4_y54a5"]
 [ext_resource type="PackedScene" uid="uid://cc3nrl77j8y7g" path="res://Scenes/Arbre2.tscn" id="5_76mav"]
@@ -31,9 +31,10 @@ point_count = 2
 script = ExtResource("1_vspvp")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(575, 254)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_37rg3")
+position = Vector2(290, 1073)
+rotation = 1.5708
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_5yu4i")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_wihm0")

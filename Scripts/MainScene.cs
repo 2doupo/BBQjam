@@ -78,7 +78,7 @@ public partial class MainScene : Node
     public void Restart()
     {
         currentScore = 0;
-        LoadLevel(0);
+        LoadLevel(3);
     }
 
     public float GetProgress()
