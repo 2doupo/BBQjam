@@ -27,18 +27,19 @@ public partial class MainScene : Node
     {
         switch (index)
         {
-            case 0: LoadLevel(StartInterfacePath); break;
-            case 1: LoadLevel(InBetweenInterface); break;
-            case 2: LoadLevel(GameOverScene); break;
-            //case 3: LoadLevel(Level1Path); break;
+            case 0: LoadLevel(StartInterfacePath, false); break;
+            case 1: LoadLevel(InBetweenInterface, false); break;
+            case 2: LoadLevel(GameOverScene, false); break;
+            case 3: LoadLevel(Level1Path); break;
             case 4: LoadLevel(Level2Path); break;
             case 5: LoadLevel(Level3Path); break;
-            case 3: LoadLevel(Level4Path); break;
+            case 6: LoadLevel(Level4Path); break;
         }
     }
 
-    public void LoadLevel(string path)
+    public void LoadLevel(string path, bool isLevel = true)
     {
+        MusicManager.instance.StopAllMusics();
         if (GetChildCount() > 0)
         {
             Node child = GetChild(0);
@@ -49,6 +50,10 @@ public partial class MainScene : Node
         AddChild(sceneNode);
 
         if (sceneNode is IScene) (sceneNode as IScene).SetMainScene(this, currentLevel);
+        if (isLevel)
+        {
+            MusicManager.instance.PlayMusic(MusicManager.Music.MusicMain);
+        }
     }
 
     public void OpenNextLevel()

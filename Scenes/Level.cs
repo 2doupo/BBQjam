@@ -13,7 +13,7 @@ public partial class Level : Node2D, IScene
     private MainScene mainScene;
     private int currentLevel;
 
-    public float LevelTime = 100;
+    public float LevelTime = 62;
     private float currentTime;
 
     public InGameInterface gameInterface;
